@@ -53,16 +53,16 @@ export default function ContactForm() {
     <div className="">
       <Form {...form}>
         <form
-          className="grid grid-cols-3 items-center p-4 lg:p-10 shadow-xl shadow-primary rounded-xl"
+          className="grid grid-cols-3 items-center p-4 lg:p-10 shadow-xl shadow-secondary rounded-xl"
           onSubmit={form.handleSubmit(onSubmit)}
         >
-          <div className="col-span-3 flex flex-col gap-4 lg:col-span-3 lg:gap-8">
+          <div className="col-span-3 flex flex-col gap-4  md:gap-4">
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="lg:text-xl">Ime i Prezime:</FormLabel>
+                  <FormLabel className="">Ime i Prezime:</FormLabel>
 
                   <FormControl>
                     <Input placeholder="Unesite ime i prezime" {...field} />
@@ -77,7 +77,7 @@ export default function ContactForm() {
               name="phone"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="lg:text-xl">Broj telefona:</FormLabel>
+                  <FormLabel className="">Broj telefona:</FormLabel>
                   <FormControl>
                     <Input placeholder="Unesite vas broj telefona" {...field} />
                   </FormControl>
@@ -91,7 +91,7 @@ export default function ContactForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="lg:text-xl">Email:</FormLabel>
+                  <FormLabel className="">Email:</FormLabel>
                   <FormControl>
                     <Input placeholder="john@example.com" {...field} />
                   </FormControl>
@@ -105,7 +105,7 @@ export default function ContactForm() {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="lg:text-xl  ">Vasa poruka:</FormLabel>
+                  <FormLabel className="">Vasa poruka:</FormLabel>
                   <FormControl>
                     <Textarea
                       {...field}
@@ -119,7 +119,7 @@ export default function ContactForm() {
             />
             <Button
               disabled={isLoading}
-              className="bg-primary  hover:bg-gray-600 transition-colors ease-in-out duration-500"
+              className="bg-secondary  hover:bg-gray-600 transition-colors ease-in-out duration-500"
             >
               {isLoading ? "Sending....." : "Send"}
             </Button>
