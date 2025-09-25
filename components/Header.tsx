@@ -158,18 +158,18 @@ export default function Header() {
           : "bg-transparent"
       }  fixed top-0 left-0 right-0 z-[10] transition-colors`}
     >
-      <nav className="flex items-center justify-between px-8 py-4 max-w-[80rem] w-full text-primary font-bold">
+      <nav className="flex items-center justify-between px-8 py- max-w-[80rem] w-full text-primary font-bold">
         <Link href="/" className="">
           <Image
             src={Logo}
-            alt="dm rustic 24"
-            width={50}
-            height={50}
-            className="rounded-full"
+            alt="naturkop doo"
+            width={75}
+            height={75}
+            className=""
           />
         </Link>
         <DesktopNav />
-        <Link href="tel:+3816">
+        <Link href="tel:+38166224502">
           <motion.button
             whileHover={{
               color: "hsl(var(--foreground))",
@@ -178,7 +178,7 @@ export default function Header() {
             className=" items-center justify-center rounded-full text-primary border-primary border-2 text-sm md:text-lg py-1 px-2 md:py-2 md:px-4 transition-colors flex"
           >
             <PhoneIcon />
-            <p className="">+38160 000 000</p>
+            <p className="">+38166 224 502</p>
           </motion.button>
         </Link>
         <MobileMenu />
