@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-end justify-center overflow-hidden md:pb-20 pb-10">
+    <section className="relative h-[100dvh] flex items-end justify-center overflow-hidden md:pb-20 pb-10">
       {/* Pozadinska slika */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -32,11 +32,11 @@ export default function Hero() {
             Prerada voća i povrća
           </p>
           <p className="text-lg md:text-xl md:mb-12 mb-8 max-w-6xl md:leading-relaxed">
-            Specijalizovani smo za preradu voća i povrća najvišeg kvaliteta. 
-            Naša firma sa dugogodišnjim iskustvom pruža najbolje proizvode 
-            iz Gornjeg Stupnja i Kruševca.
+            Specijalizovani smo za preradu voća i povrća najvišeg kvaliteta.
+            Naša firma sa dugogodišnjim iskustvom pruža najbolje proizvode iz
+            Gornjeg Stupnja i Kruševca.
           </p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

@@ -17,7 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Naturkop doo - Prerada voća i povrća",
-  description: "Naturkop doo se bavi prerada voća i povrća. Kvalitetni proizvodi iz Gornjeg Stupnja i Kruševca.",
+  description:
+    "Naturkop doo se bavi prerada voća i povrća. Kvalitetni proizvodi iz Gornjeg Stupnja i Kruševca.",
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -27,7 +28,16 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
-  keywords: ["prerada voća", "prerada povrća", "Naturkop", "Gornji Stupanj", "Kruševac", "kvalitetni proizvodi", "hrana", "konzerviranje"],
+  keywords: [
+    "prerada voća",
+    "prerada povrća",
+    "Naturkop",
+    "Gornji Stupanj",
+    "Kruševac",
+    "kvalitetni proizvodi",
+    "hrana",
+    "konzerviranje",
+  ],
   alternates: {
     canonical: "https://www.naturkop.rs/",
   },
@@ -41,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="sr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-muted-foreground bg-muted  text-base md:text-xl`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-gray-700 bg-muted  text-base md:text-xl`}
       >
         <Header />
         {children}

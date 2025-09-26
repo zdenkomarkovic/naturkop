@@ -16,8 +16,7 @@ export default function Footer() {
           {/* Logo i osnovne informacije */}
           <div className=" text-center md:text-left">
             <p className=" mb-6 text-lg leading-relaxed">
-              Specijalizovani za preradu voća i povrća najvišeg kvaliteta. 
-             
+              Specijalizovani za preradu voća i povrća najvišeg kvaliteta.
             </p>
             <div className="mb-6">
               <Image
@@ -25,35 +24,33 @@ export default function Footer() {
                 alt="Naturkop doo"
                 width={250}
                 height={100}
-                className="mx-auto w-full md:mx-0"
+                className="mx-auto w-full md:mx-0 rounded-full"
               />
             </div>
-          
           </div>
 
           {/* Navigacija */}
           <div className="w-fit mx-auto">
             <h3 className="text-xl font-semibold mb-6">Navigacija</h3>
             <nav className="space-y-3">
-              <Link 
-                href="/" 
+              <Link
+                href="/"
                 className="block  hover:text-gray-300 transition-colors"
               >
                 Početna
               </Link>
-              <Link 
-                href="/" 
+              <Link
+                href="/"
                 className="block  hover:text-gray-300 transition-colors"
               >
                 Proizvodi
               </Link>
-              <Link 
-                href="/kontakt" 
+              <Link
+                href="/kontakt"
                 className="block  hover:text-gray-300 transition-colors"
               >
                 Kontakt
               </Link>
-
             </nav>
           </div>
 
@@ -62,16 +59,16 @@ export default function Footer() {
             <h3 className="text-xl font-semibold mb-6">Kontakt</h3>
             <div className="space-y-3">
               <div>
-                <a 
-                  href="tel:+38166224502" 
+                <a
+                  href="tel:+38166224502"
                   className=" hover:text-gray-300 transition-colors"
                 >
                   +381 66 224 502
                 </a>
               </div>
               <div>
-                <a 
-                  href="mailto:naturkopdoo@gmail.com" 
+                <a
+                  href="mailto:naturkopdoo@gmail.com"
                   className=" hover:text-gray-300 transition-colors"
                 >
                   naturkopdoo@gmail.com
@@ -79,14 +76,13 @@ export default function Footer() {
               </div>
               <div className="flex gap-2">
                 <p className="font-semibold text-white mb-1">Sediste:</p>
-                <p>Garevina bb -  Gornji Stupanj</p>
+                <p>Garevina bb - Gornji Stupanj</p>
               </div>
               <div className="flex gap-2">
                 <p className="font-semibold text-white mb-1">Ispostava:</p>
                 <p>Istočna 8 - Krusevac-Mudrakovac</p>
                 <p></p>
               </div>
-
             </div>
           </div>
         </div>
@@ -95,14 +91,18 @@ export default function Footer() {
         <div className="border-t border-gray-700 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:px-20">
             <p className=" text-center md:text-left">
-              &copy; {new Date().getFullYear()} Naturkop doo. Sva prava zadržana.
+              &copy; {new Date().getFullYear()} Naturkop doo. Sva prava
+              zadržana.
             </p>
-            <a 
-              href="https://www.manikamwebsolutions.com/" 
+            <a
+              href="https://www.manikamwebsolutions.com/"
               target="_blank"
               className=" "
             >
-              Izrada sajta: <span className="font-bold text-primary hover:text-white transition-colors">ManikamWebSolutions</span>
+              Izrada sajta:{" "}
+              <span className="font-bold text-primary hover:text-white transition-colors">
+                ManikamWebSolutions
+              </span>
             </a>
           </div>
         </div>
