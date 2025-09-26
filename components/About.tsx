@@ -16,31 +16,39 @@ export default function About() {
             O nama
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-8">
-            Naturkop doo je firma sa bogatom tradicijom u oblasti prerade voća i povrća. 
-            Naša misija je da pružimo najkvalitetnije proizvode koji zadržavaju prirodnu 
-            hranljivost i ukus svežeg voća i povrća.
+            Naturkop doo je firma sa bogatom tradicijom u oblasti prerade voća i
+            povrća. Naša misija je da pružimo najkvalitetnije proizvode koji
+            zadržavaju prirodnu hranljivost i ukus svežeg voća i povrća.
           </p>
           <div className="grid md:grid-cols-3 gap-8 mt-12">
-            <div className="text-center border-secondary border-2 rounded-full p-4">
+            <div className="text-center border-secondary border-2 rounded-full px-4 py-6">
               <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🌱</span>
               </div>
               <h3 className="text-xl font-semibold mb-2">Prirodni proizvodi</h3>
-              <p className="text-gray-600">Koristimo samo najkvalitetnije sirovine</p>
+              <p className="text-gray-600">
+                Koristimo samo najkvalitetnije sirovine
+              </p>
             </div>
-            <div className="text-center border-secondary border-2 rounded-full p-4">
+            <div className="text-center border-secondary border-2 rounded-full  px-4 py-6">
               <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🏭</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Moderna tehnologija</h3>
-              <p className="text-gray-600">Savremeni procesi prerade i pakovanja</p>
+              <h3 className="text-xl font-semibold mb-2">
+                Moderna tehnologija
+              </h3>
+              <p className="text-gray-600">
+                Savremeni procesi prerade i pakovanja
+              </p>
             </div>
-            <div className="text-center border-secondary border-2 rounded-full p-4">
+            <div className="text-center border-secondary border-2 rounded-full  px-4 py-6">
               <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">⭐</span>
               </div>
               <h3 className="text-xl font-semibold mb-2">Kvalitet</h3>
-              <p className="text-gray-600">Stroga kontrola kvaliteta u svakom koraku</p>
+              <p className="text-gray-600">
+                Stroga kontrola kvaliteta u svakom koraku
+              </p>
             </div>
           </div>
         </motion.div>
