@@ -21,7 +21,7 @@ export default function About() {
             zadržavaju prirodnu hranljivost i ukus svežeg voća i povrća.
           </p>
           <div className="grid md:grid-cols-3 gap-8 mt-12">
-            <div className="text-center border-secondary border-2 rounded-full px-4 py-6">
+            <div className="text-center border-secondary border-2 rounded-full px-4 py-10 md:py-6 shadow-lg shadow-secondary">
               <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🌱</span>
               </div>
@@ -30,7 +30,7 @@ export default function About() {
                 Koristimo samo najkvalitetnije sirovine
               </p>
             </div>
-            <div className="text-center border-secondary border-2 rounded-full  px-4 py-6">
+            <div className="text-center border-secondary border-2 rounded-full  px-4 py-10 md:py-6 shadow-lg shadow-secondary">
               <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🏭</span>
               </div>
@@ -41,7 +41,7 @@ export default function About() {
                 Savremeni procesi prerade i pakovanja
               </p>
             </div>
-            <div className="text-center border-secondary border-2 rounded-full  px-4 py-6">
+            <div className="text-center border-secondary border-2 rounded-full  px-4 py-10 md:py-6 shadow-lg shadow-secondary">
               <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">⭐</span>
               </div>
