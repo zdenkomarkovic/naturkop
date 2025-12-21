@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev:*)",
+      "Bash(npm install:*)",
+      "Bash(if [ -d \"app/studio\" ])",
+      "Bash(then rm -rf app/studio)",
+      "Bash(fi)",
+      "Bash(if [ -d \"app/blog\" ])",
+      "Bash(then rm -rf app/blog)",
+      "Bash(git checkout:*)",
+      "Bash(curl:*)",
+      "Bash(timeout 3 npm run dev:*)",
+      "Bash(node -e:*)",
+      "Bash(node test-blog.js:*)"
+    ]
+  }
+}

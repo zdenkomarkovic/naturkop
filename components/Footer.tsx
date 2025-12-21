@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Footer() {
+export default function Footer({ showBlog }: { showBlog: boolean }) {
   return (
     <motion.footer
       className="bg-secondary text-white py-10 md:px-10"
@@ -16,7 +16,7 @@ export default function Footer() {
           {/* Logo i osnovne informacije */}
           <div className=" text-center md:text-left">
             <p className=" mb-6 text-lg leading-relaxed">
-              Specijalizovani za preradu voća i povrća najvišeg kvaliteta.
+              Domaći džemovi i voćni namazi vrhunskog kvaliteta pod brendom "Mamina kuhinja".
             </p>
             <div className="mb-6">
               <Image
@@ -40,11 +40,37 @@ export default function Footer() {
                 Početna
               </Link>
               <Link
-                href="/"
+                href="/#o-nama"
+                className="block  hover:text-gray-300 transition-colors"
+              >
+                O nama
+              </Link>
+              <Link
+                href="/#proizvodi"
                 className="block  hover:text-gray-300 transition-colors"
               >
                 Proizvodi
               </Link>
+              <Link
+                href="/#robne-marke"
+                className="block  hover:text-gray-300 transition-colors"
+              >
+                Robne marke
+              </Link>
+              <Link
+                href="/#partneri"
+                className="block  hover:text-gray-300 transition-colors"
+              >
+                Partneri
+              </Link>
+              {showBlog && (
+                <Link
+                  href="/blog"
+                  className="block  hover:text-gray-300 transition-colors"
+                >
+                  Blog
+                </Link>
+              )}
               <Link
                 href="/kontakt"
                 className="block  hover:text-gray-300 transition-colors"

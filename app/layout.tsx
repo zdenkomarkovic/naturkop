@@ -2,23 +2,19 @@ import ButtonToTop from "@/components/ButtonToTop";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+import { hasBlogPosts } from "@/lib/sanity.fetch";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Naturkop doo - Prerada voća i povrća",
+  title: "Naturkop - Mamina kuhinja | Domaći džemovi i voćni namazi",
   description:
-    "Naturkop doo se bavi prerada voća i povrća. Kvalitetni proizvodi iz Gornjeg Stupnja i Kruševca.",
+    "Naturkop - proizvodnja domaćih džemova i voćnih namaza pod brendom 'Mamina kuhinja'. Autentičan ukus domaće tradicije iz Mudrakovca. Private label programa.",
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -29,34 +25,41 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   keywords: [
-    "prerada voća",
-    "prerada povrća",
+    "džem",
+    "domaći džem",
+    "voćni namaz",
+    "Mamina kuhinja",
     "Naturkop",
-    "Gornji Stupanj",
+    "prerada voća",
+    "Mudrakovac",
     "Kruševac",
-    "kvalitetni proizvodi",
-    "hrana",
-    "konzerviranje",
+    "private label",
+    "džem od šljive",
+    "džem od višnje",
+    "džem od jagode",
+    "tradicionalni proizvodi",
   ],
   alternates: {
     canonical: "https://www.naturkop.rs/",
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const showBlog = await hasBlogPosts();
+
   return (
     <html lang="sr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-gray-700 bg-muted  text-base md:text-xl`}
+        className={`${inter.variable} antialiased text-gray-700 bg-muted text-base md:text-xl`}
       >
-        <Header />
+        <Header showBlog={showBlog} />
         {children}
         <ButtonToTop />
-        <Footer />
+        <Footer showBlog={showBlog} />
       </body>
     </html>
   );

@@ -26,115 +26,127 @@ import { HoverCard, HoverCardTrigger, HoverCardContent } from "./ui/hover-card";
 
 const mobTitleStyles = "text-lg py-2";
 
-const MobileMenu = () => (
-  <Sheet>
-    <SheetTrigger className="lg:hidden">
-      <MenuIcon className="text-primary cursor-pointer" />
-    </SheetTrigger>
-    <SheetContent>
-      <SheetHeader>
-        <SheetTitle></SheetTitle>
-        <SheetContent>
-          <ul>
-            {navList.map((item, index) => {
-              if (item.list)
-                return (
-                  <Fragment key={index}>
-                    <Accordion type="single" collapsible>
-                      <AccordionItem className="border-none" value="item-1">
-                        <motion.div
-                          whileHover={{ color: "hsl(var(--primary))" }}
-                        >
-                          <AccordionTrigger
-                            className={`${mobTitleStyles} hover:no-underline`}
+const MobileMenu = ({ showBlog }: { showBlog: boolean }) => {
+  const filteredNavList = navList.filter(
+    (item) => showBlog || item.title !== "Blog"
+  );
+
+  return (
+    <Sheet>
+      <SheetTrigger className="lg:hidden">
+        <MenuIcon className="text-primary cursor-pointer" />
+      </SheetTrigger>
+      <SheetContent>
+        <SheetHeader>
+          <SheetTitle></SheetTitle>
+          <SheetContent>
+            <ul>
+              {filteredNavList.map((item, index) => {
+                if (item.list)
+                  return (
+                    <Fragment key={index}>
+                      <Accordion type="single" collapsible>
+                        <AccordionItem className="border-none" value="item-1">
+                          <motion.div
+                            whileHover={{ color: "hsl(var(--primary))" }}
                           >
-                            {item.title}
-                          </AccordionTrigger>
-                        </motion.div>
-                        <AccordionContent>
-                          {item.list.map((link, index2) => (
-                            <Link
-                              className="pl-6 block font-light py-2"
-                              key={`${index}.${index2}`}
-                              href={link.link}
+                            <AccordionTrigger
+                              className={`${mobTitleStyles} hover:no-underline`}
                             >
-                              <motion.li
-                                whileHover={{ color: "hsl(var(--primary))" }}
+                              {item.title}
+                            </AccordionTrigger>
+                          </motion.div>
+                          <AccordionContent>
+                            {item.list.map((link, index2) => (
+                              <Link
+                                className="pl-6 block font-light py-2"
+                                key={`${index}.${index2}`}
+                                href={link.link}
                               >
-                                {link.title}
-                              </motion.li>
-                            </Link>
-                          ))}
-                        </AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
-                  </Fragment>
-                );
-              return (
-                <Link key={index} href={item.link}>
-                  <motion.li
-                    whileHover={{ color: "hsl(var(--primary))" }}
-                    className={mobTitleStyles}
-                  >
-                    <SheetTrigger>{item.title}</SheetTrigger>
-                  </motion.li>
-                </Link>
-              );
-            })}
-          </ul>
-        </SheetContent>
-      </SheetHeader>
-    </SheetContent>
-  </Sheet>
-);
-
-const DesktopNav = () => (
-  <ul className="hidden gap-8 lg:flex  text-xl">
-    {navList.map((item, index) => {
-      if (item.list)
-        return (
-          <HoverCard key={index} openDelay={0} closeDelay={50}>
-            <HoverCardTrigger>
-              <motion.div
-                whileHover={{ color: "hsl(var(--primary))", scale: 1.1 }}
-                className="flex gap-1 transition-colors"
-              >
-                {item.title}
-                <ChevronDownIcon className="w-[18px]" />
-              </motion.div>
-            </HoverCardTrigger>
-            <HoverCardContent className="p-0">
-              {item.list.map((link, index2) => (
-                <motion.li
-                  key={`${index}.${index2}`}
-                  whileHover={{
-                    backgroundColor: "hsl(var(--primary))",
-                    color: "hsl(var(--primary-foreground))",
-                  }}
-                >
-                  <Link className="px-2 py-2 block" href={link.link}>
-                    {link.title}
+                                <motion.li
+                                  whileHover={{ color: "hsl(var(--primary))" }}
+                                >
+                                  {link.title}
+                                </motion.li>
+                              </Link>
+                            ))}
+                          </AccordionContent>
+                        </AccordionItem>
+                      </Accordion>
+                    </Fragment>
+                  );
+                return (
+                  <Link key={index} href={item.link}>
+                    <motion.li
+                      whileHover={{ color: "hsl(var(--primary))" }}
+                      className={mobTitleStyles}
+                    >
+                      <SheetTrigger>{item.title}</SheetTrigger>
+                    </motion.li>
                   </Link>
-                </motion.li>
-              ))}
-            </HoverCardContent>
-          </HoverCard>
-        );
-      return (
-        <Link key={index} href={item.link}>
-          <motion.li
-            className="transition-colors underline-animation"
-            whileHover={{ color: "hsl(var(--primary))", scale: 1.1 }}
-          >
-            {item.title}
-          </motion.li>
-        </Link>
-      );
-    })}
-  </ul>
-);
+                );
+              })}
+            </ul>
+          </SheetContent>
+        </SheetHeader>
+      </SheetContent>
+    </Sheet>
+  );
+};
 
-export default function Header() {
+const DesktopNav = ({ showBlog }: { showBlog: boolean }) => {
+  const filteredNavList = navList.filter(
+    (item) => showBlog || item.title !== "Blog"
+  );
+
+  return (
+    <ul className="hidden gap-8 lg:flex  text-xl">
+      {filteredNavList.map((item, index) => {
+        if (item.list)
+          return (
+            <HoverCard key={index} openDelay={0} closeDelay={50}>
+              <HoverCardTrigger>
+                <motion.div
+                  whileHover={{ color: "hsl(var(--primary))", scale: 1.1 }}
+                  className="flex gap-1 transition-colors"
+                >
+                  {item.title}
+                  <ChevronDownIcon className="w-[18px]" />
+                </motion.div>
+              </HoverCardTrigger>
+              <HoverCardContent className="p-0">
+                {item.list.map((link, index2) => (
+                  <motion.li
+                    key={`${index}.${index2}`}
+                    whileHover={{
+                      backgroundColor: "hsl(var(--primary))",
+                      color: "hsl(var(--primary-foreground))",
+                    }}
+                  >
+                    <Link className="px-2 py-2 block" href={link.link}>
+                      {link.title}
+                    </Link>
+                  </motion.li>
+                ))}
+              </HoverCardContent>
+            </HoverCard>
+          );
+        return (
+          <Link key={index} href={item.link}>
+            <motion.li
+              className="transition-colors underline-animation"
+              whileHover={{ color: "hsl(var(--primary))", scale: 1.1 }}
+            >
+              {item.title}
+            </motion.li>
+          </Link>
+        );
+      })}
+    </ul>
+  );
+};
+
+export default function Header({ showBlog }: { showBlog: boolean }) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -168,7 +180,7 @@ export default function Header() {
             className=""
           />
         </Link>
-        <DesktopNav />
+        <DesktopNav showBlog={showBlog} />
         <Link href="tel:+38166224502">
           <motion.button
             whileHover={{
@@ -181,7 +193,7 @@ export default function Header() {
             <p className="">+38166 224 502</p>
           </motion.button>
         </Link>
-        <MobileMenu />
+        <MobileMenu showBlog={showBlog} />
       </nav>
     </header>
   );

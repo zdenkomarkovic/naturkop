@@ -4,17 +4,24 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative h-[100dvh] flex items-end justify-center overflow-hidden md:pb-20 pb-10">
+    <section className="relative h-[100dvh] flex items-end justify-center overflow-hidden md:pb-20 pb-6">
       {/* Pozadinska slika */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero.jpg"
+          src="/images/d.png"
           alt="Pozadina"
           fill
-          className="object-cover"
+          className="hidden md:block object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <Image
+          src="/images/m.png"
+          alt="Pozadina"
+          fill
+          className="md:hidden object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/35"></div>
       </div>
 
       {/* Sadržaj */}
@@ -25,16 +32,24 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-7xl mx-auto"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold md:mb-6 mb-4">
-            Naturkop doo
-          </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl md:mb-8 mb-4 font-light">
-            Prerada voća i povrća
+          <div className="md:mb-6 mb-4 w-fit">
+            <h1 className="text-4xl text-secondary md:text-6xl lg:text-7xl font-bold inline-block">
+              Mamina kuhinja
+            </h1>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+              className="h-1 bg-primary origin-left mt-2"
+              style={{ width: "100%" }}
+            />
+          </div>
+          <p className="text-xl md:text-2xl  lg:text-3xl md:mb-8 mb-4 font-light">
+            Domaći džemovi i voćni namazi
           </p>
-          <p className="text-lg md:text-xl md:mb-12 mb-8 max-w-6xl md:leading-relaxed">
-            Specijalizovani smo za preradu voća i povrća najvišeg kvaliteta.
-            Naša firma sa dugogodišnjim iskustvom pruža najbolje proizvode iz
-            Gornjeg Stupnja i Kruševca.
+          <p className="text-base md:text-xl md:mb-12 mb-5 max-w-6xl md:leading-relaxed">
+            Autentičan ukus domaće tradicije. Prirodna svežina i bogatstvo voća
+            sa naših prostora u svakom proizvodu "Mamina kuhinja" brenda.
           </p>
 
           <motion.div
