@@ -40,7 +40,7 @@ export async function getBlogPostBySlug(slug: string) {
 // Partner fetch functions
 export async function getAllPartners() {
   try {
-    const partners = await client.fetch(partnersQuery);
+    const partners = await client.fetch(partnersQuery, {}, { cache: 'no-store' });
     return partners;
   } catch (error) {
     console.error('Error fetching partners:', error);
@@ -50,7 +50,7 @@ export async function getAllPartners() {
 
 export async function getPartnersByType(type: 'maloprodaja' | 'veleprodaja') {
   try {
-    const partners = await client.fetch(partnersByTypeQuery, { type });
+    const partners = await client.fetch(partnersByTypeQuery, { type }, { cache: 'no-store' });
     return partners;
   } catch (error) {
     console.error('Error fetching partners by type:', error);

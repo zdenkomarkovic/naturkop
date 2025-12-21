@@ -1,36 +1,57 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import { X } from "lucide-react";
 
 const products = [
   {
     name: "Džem od šljive",
-    image: "/images/MK_SLJIVA_L.jpg",
+    imageLarge: "/images/MK_SLJIVA_L.jpg",
+    imageSmall: "/images/sljiva.jpg",
     description: "Bogat ukus zrelih šljiva, savršen za doručak ili desert",
   },
   {
     name: "Džem od višnje",
-    image: "/images/MK_VISNJA_L.jpg",
+    imageLarge: "/images/MK_VISNJA_L.jpg",
+    imageSmall: "/images/visnja.jpg",
     description: "Slatko-kiselkast ukus višnje koji osvaja svako nepce",
   },
   {
     name: "Džem od jagode",
-    image: "/images/MK_JAGODA_L.jpg",
+    imageLarge: "/images/MK_JAGODA_L.jpg",
+    imageSmall: "/images/jagoda.jpg",
     description: "Omiljeni ukus detinjstva - svež i aromatičan",
   },
   {
     name: "Džem od kajsije",
-    image: "/images/MK_KAJSIJA_L.jpg",
+    imageLarge: "/images/MK_KAJSIJA_L.jpg",
+    imageSmall: "/images/kajsija.jpg",
     description: "Zlatni ukus leta u svakoj kašici",
   },
   {
     name: "Džem od šipurka",
-    image: "/images/MK_SIPURAK_L.jpg",
+    imageLarge: "/images/MK_SIPURAK_L.jpg",
+    imageSmall: "/images/sipurak.jpg",
     description: "Tradicionalni ukus bogat vitaminom C",
   },
 ];
 
 export default function Products() {
+  const [selectedProduct, setSelectedProduct] = useState<number | null>(null);
+
+  // Blokiraj scroll kada je modal otvoren
+  useEffect(() => {
+    if (selectedProduct !== null) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedProduct]);
+
   return (
     <section id="proizvodi" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -60,13 +81,26 @@ export default function Products() {
                 whileHover={{ y: -10 }}
                 className="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="relative h-80 w-full">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover"
-                  />
+                <div
+                  className="grid grid-cols-2 h-96 p-4 cursor-pointer"
+                  onClick={() => setSelectedProduct(index)}
+                >
+                  <div className="relative w-full">
+                    <Image
+                      src={product.imageLarge}
+                      alt={`${product.name} - velika tegla`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="relative w-full">
+                    <Image
+                      src={product.imageSmall}
+                      alt={`${product.name} - mala tegla`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -89,13 +123,74 @@ export default function Products() {
               Uslužna proizvodnja (Private Label)
             </h3>
             <p className="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-              Kvalitetna sirovina, kontrolisani proces proizvodnje i poštovanje rokova čine
-              Naturkop pouzdanim partnerom u oblasti prerade voća — bilo da ste kupac,
-              distributer ili poslovni saradnik koji traži siguran izvor domaćih džemova i namaza.
+              Kvalitetna sirovina, kontrolisani proces proizvodnje i poštovanje
+              rokova čine Naturkop pouzdanim partnerom u oblasti prerade voća —
+              bilo da ste kupac, distributer ili poslovni saradnik koji traži
+              siguran izvor domaćih džemova i namaza.
             </p>
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Modal za prikaz slika */}
+      <AnimatePresence>
+        {selectedProduct !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedProduct(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", duration: 0.5 }}
+              className="relative max-w-6xl w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Dugme za zatvaranje */}
+              <button
+                onClick={() => setSelectedProduct(null)}
+                className="absolute -top-12 right-0 text-white hover:text-primary transition-colors"
+              >
+                <X size={40} />
+              </button>
+
+              {/* Naslov */}
+              <h3 className="text-white text-2xl md:text-4xl font-bold mb-6 text-center">
+                {products[selectedProduct].name}
+              </h3>
+
+              {/* Slike */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white p-4 md:p-8 rounded-lg">
+                <div className="relative h-[50vh] md:h-[60vh] w-full">
+                  <Image
+                    src={products[selectedProduct].imageLarge}
+                    alt={`${products[selectedProduct].name} - velika tegla`}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="relative h-[50vh] md:h-[60vh] w-full">
+                  <Image
+                    src={products[selectedProduct].imageSmall}
+                    alt={`${products[selectedProduct].name} - mala tegla`}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+
+              {/* Opis */}
+              <p className="text-white text-lg md:text-xl text-center mt-6">
+                {products[selectedProduct].description}
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

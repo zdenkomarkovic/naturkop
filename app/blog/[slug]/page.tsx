@@ -1,9 +1,13 @@
 import { getBlogPostBySlug } from "@/lib/sanity.fetch";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { PortableText } from '@portabletext/react';
+import { PortableText } from "@portabletext/react";
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const post = await getBlogPostBySlug(params.slug);
 
   if (!post) {
@@ -12,9 +16,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
   return (
     <main className="min-h-screen py-20">
-      <article className="container mx-auto px-4 max-w-4xl">
+      <article className="container mx-auto px-4 max-w-7xl">
         {post.mainImage?.asset?.url && (
-          <div className="relative h-96 w-full mb-8 rounded-lg overflow-hidden">
+          <div className="relative h-96 md:h-[60dvh] w-full mb-8 rounded-lg overflow-hidden">
             <Image
               src={post.mainImage.asset.url}
               alt={post.title}
@@ -30,10 +34,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
         {post.publishedAt && (
           <p className="text-gray-600 mb-8">
-            {new Date(post.publishedAt).toLocaleDateString('sr-RS', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
+            {new Date(post.publishedAt).toLocaleDateString("sr-RS", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
             })}
           </p>
         )}
