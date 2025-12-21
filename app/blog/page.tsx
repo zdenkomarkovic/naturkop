@@ -46,15 +46,6 @@ export default async function BlogPage() {
                   {post.excerpt && (
                     <p className="text-gray-600 mb-4">{post.excerpt}</p>
                   )}
-                  {post.publishedAt && (
-                    <p className="text-sm text-gray-500">
-                      {new Date(post.publishedAt).toLocaleDateString('sr-RS', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                      })}
-                    </p>
-                  )}
                 </div>
               </Link>
             ))}

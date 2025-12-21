@@ -16,7 +16,8 @@ export default function Footer({ showBlog }: { showBlog: boolean }) {
           {/* Logo i osnovne informacije */}
           <div className=" text-center md:text-left">
             <p className=" mb-6 text-lg leading-relaxed">
-              Domaći džemovi i voćni namazi vrhunskog kvaliteta pod brendom "Mamina kuhinja".
+              Domaći džemovi i voćni namazi vrhunskog kvaliteta pod brendom
+              "Mamina kuhinja".
             </p>
             <div className="mb-6">
               <Image
@@ -50,12 +51,6 @@ export default function Footer({ showBlog }: { showBlog: boolean }) {
                 className="block  hover:text-gray-300 transition-colors"
               >
                 Proizvodi
-              </Link>
-              <Link
-                href="/#robne-marke"
-                className="block  hover:text-gray-300 transition-colors"
-              >
-                Robne marke
               </Link>
               <Link
                 href="/#partneri"

@@ -28,21 +28,6 @@ export default defineType({
       validation: (Rule) => Rule.required().max(200),
     }),
     defineField({
-      name: 'category',
-      title: 'Kategorija',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Tradicija', value: 'tradicija' },
-          { title: 'Zdravlje', value: 'zdravlje' },
-          { title: 'Proizvodnja', value: 'proizvodnja' },
-          { title: 'Recepti', value: 'recepti' },
-          { title: 'Vesti', value: 'vesti' },
-        ],
-      },
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
       name: 'mainImage',
       title: 'Glavna slika',
       type: 'image',
@@ -68,12 +53,6 @@ export default defineType({
       ],
     }),
     defineField({
-      name: 'publishedAt',
-      title: 'Datum objave',
-      type: 'datetime',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
       name: 'author',
       title: 'Autor',
       type: 'string',
@@ -83,13 +62,13 @@ export default defineType({
     select: {
       title: 'title',
       media: 'mainImage',
-      date: 'publishedAt',
+      excerpt: 'excerpt',
     },
     prepare(selection) {
-      const { title, media, date } = selection;
+      const { title, media, excerpt } = selection;
       return {
         title,
-        subtitle: date ? new Date(date).toLocaleDateString('sr-RS') : 'Nije objavljeno',
+        subtitle: excerpt,
         media,
       };
     },

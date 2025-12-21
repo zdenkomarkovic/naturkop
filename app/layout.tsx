@@ -1,6 +1,4 @@
-import ButtonToTop from "@/components/ButtonToTop";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import ConditionalLayout from "@/components/ConditionalLayout";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { hasBlogPosts } from "@/lib/sanity.fetch";
@@ -56,10 +54,9 @@ export default async function RootLayout({
       <body
         className={`${inter.variable} antialiased text-gray-700 bg-muted text-base md:text-xl overflow-x-hidden`}
       >
-        <Header showBlog={showBlog} />
-        {children}
-        <ButtonToTop />
-        <Footer showBlog={showBlog} />
+        <ConditionalLayout showBlog={showBlog}>
+          {children}
+        </ConditionalLayout>
       </body>
     </html>
   );

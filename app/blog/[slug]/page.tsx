@@ -28,19 +28,9 @@ export default async function BlogPostPage({
           </div>
         )}
 
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
           {post.title}
         </h1>
-
-        {post.publishedAt && (
-          <p className="text-gray-600 mb-8">
-            {new Date(post.publishedAt).toLocaleDateString("sr-RS", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </p>
-        )}
 
         {post.body && (
           <div className="prose prose-lg max-w-none">

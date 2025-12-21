@@ -9,7 +9,6 @@ export default defineType({
       name: 'name',
       title: 'Naziv',
       type: 'string',
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'type',
@@ -21,13 +20,11 @@ export default defineType({
           { title: 'Veleprodaja', value: 'veleprodaja' },
         ],
       },
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'location',
       title: 'Lokacija',
       type: 'string',
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'address',
@@ -38,7 +35,6 @@ export default defineType({
       name: 'city',
       title: 'Grad',
       type: 'string',
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'phone',

@@ -7,8 +7,6 @@ export const blogPostsQuery = groq`
     title,
     slug,
     excerpt,
-    category,
-    publishedAt,
     author,
     mainImage {
       asset->{
@@ -25,8 +23,6 @@ export const blogPostBySlugQuery = groq`
     title,
     slug,
     excerpt,
-    category,
-    publishedAt,
     author,
     "body": content,
     mainImage {
