@@ -12,7 +12,9 @@
       "Bash(curl:*)",
       "Bash(timeout 3 npm run dev:*)",
       "Bash(node -e:*)",
-      "Bash(node test-blog.js:*)"
+      "Bash(node test-blog.js:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
