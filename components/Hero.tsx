@@ -33,14 +33,14 @@ export default function Hero() {
           className="max-w-7xl mx-auto"
         >
           <div className="md:mb-6 mb-4 w-fit">
-            <h1 className="text-4xl text-secondary md:text-6xl lg:text-7xl font-bold inline-block">
+            <h1 className="text-4xl text-primary md:text-6xl lg:text-7xl font-bold inline-block">
               Mamina kuhinja
             </h1>
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
-              className="h-1 bg-primary origin-left mt-2"
+              className="h-1 bg-secondary origin-left mt-2 "
               style={{ width: "100%" }}
             />
           </div>
