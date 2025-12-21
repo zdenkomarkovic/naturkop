@@ -2,7 +2,7 @@ import { groq } from 'next-sanity';
 
 // Blog queries
 export const blogPostsQuery = groq`
-  *[_type == "blog"] | order(publishedAt desc) {
+  *[_type == "blog" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
     _id,
     title,
     slug,
@@ -20,7 +20,7 @@ export const blogPostsQuery = groq`
 `;
 
 export const blogPostBySlugQuery = groq`
-  *[_type == "blog" && slug.current == $slug][0] {
+  *[_type == "blog" && slug.current == $slug && !(_id in path("drafts.**"))][0] {
     _id,
     title,
     slug,

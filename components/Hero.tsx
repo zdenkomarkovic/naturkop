@@ -8,20 +8,20 @@ export default function Hero() {
       {/* Pozadinska slika */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/d.png"
+          src="/images/d-min.png"
           alt="Pozadina"
           fill
           className="hidden md:block object-cover"
           priority
         />
         <Image
-          src="/images/m.png"
+          src="/images/m-min.png"
           alt="Pozadina"
           fill
           className="md:hidden object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/35"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       {/* Sadržaj */}

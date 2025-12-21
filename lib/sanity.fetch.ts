@@ -19,7 +19,7 @@ export async function getAllBlogPosts() {
 
 export async function hasBlogPosts() {
   try {
-    const count = await client.fetch('count(*[_type == "blog"])', {}, { cache: 'no-store' });
+    const count = await client.fetch('count(*[_type == "blog" && !(_id in path("drafts.**"))])', {}, { cache: 'no-store' });
     return count > 0;
   } catch (error) {
     console.error('Error checking blog posts:', error);

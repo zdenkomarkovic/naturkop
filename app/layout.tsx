@@ -52,9 +52,9 @@ export default async function RootLayout({
   const showBlog = await hasBlogPosts();
 
   return (
-    <html lang="sr">
+    <html lang="sr" className="overflow-x-hidden">
       <body
-        className={`${inter.variable} antialiased text-gray-700 bg-muted text-base md:text-xl`}
+        className={`${inter.variable} antialiased text-gray-700 bg-muted text-base md:text-xl overflow-x-hidden`}
       >
         <Header showBlog={showBlog} />
         {children}

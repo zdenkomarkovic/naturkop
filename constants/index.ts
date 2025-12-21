@@ -11,10 +11,7 @@ export const navList = [
     title: "Proizvodi",
     link: "/#proizvodi",
   },
-  {
-    title: "Robne marke",
-    link: "/#robne-marke",
-  },
+
   {
     title: "Partneri",
     link: "/#partneri",
