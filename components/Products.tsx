@@ -43,12 +43,12 @@ export default function Products() {
   // Blokiraj scroll kada je modal otvoren
   useEffect(() => {
     if (selectedProduct !== null) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [selectedProduct]);
 
@@ -63,13 +63,31 @@ export default function Products() {
           className="max-w-7xl mx-auto"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
-            Naši proizvodi
+            Priča Mamine kuhinje
           </h2>
-          <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
-            Svaki proizvod iz naše "Mamina kuhinja" linije nosi autentičan ukus
-            domaće tradicije i prirodnu svežinu voća
+          <p className="text-center text-lg text-gray-600  max-w-3xl mx-auto">
+            Sećaš se one kriške hleba sa džemom, pojedene na brzinu između igre
+            u dvorištu?
+          </p>{" "}
+          <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto">
+            {" "}
+            Onog trenutka kada te mama dozove, pruži hleb u ruku i ti nastaviš
+            igru, bezbrižan i siguran.
           </p>
-
+          <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto">
+            Upravo tu toplinu čuvamo u Maminoj kuhinji.
+          </p>
+          <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto">
+            Naši džemovi prave se po tradicionalnoj recepturi, od pažljivo
+            biranog voća, bez dodatih veštačkih boja i aroma.{" "}
+          </p>
+          <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto">
+            Mamina kuhinja nije samo domaći proizvod.
+          </p>
+          <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto">
+            To je mali povratak u detinjstvo, u jednostavne trenutke koji su
+            imali najvise smisla.
+          </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => (
               <motion.div
@@ -111,7 +129,6 @@ export default function Products() {
               </motion.div>
             ))}
           </div>
-
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

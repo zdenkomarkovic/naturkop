@@ -46,7 +46,7 @@ export default function KontaktPage() {
                       naturkopdoo@gmail.com
                     </a>
                   </p>
-                  <p>
+                  {/* <p>
                     <span className="font-semibold">Telefon:</span>
                     <br />
                     <a
@@ -55,25 +55,23 @@ export default function KontaktPage() {
                     >
                       +381 66 224 502
                     </a>
-                  </p>
+                  </p> */}
                 </div>
               </div>
-
-              {/* Adresa */}
-              <div className="bg-white p-6 rounded-xl shadow-lg shadow-secondary">
-                <div className="">
-                  <p className="font-semibold">Naturkop doo: Sedište</p>
-                  <p>Garevina bb</p>
-                  <p>37234 Gornji Stupanj</p>
-                </div>
-              </div>
-
               {/* Ispostava */}
               <div className="bg-white p-6 rounded-xl shadow-lg shadow-secondary">
                 <div className="">
                   <p className="font-semibold">Naturkop doo: Ispostava</p>
                   <p>Kruševac-Mudrakovac 37000</p>
                   <p>Istočna 8</p>
+                </div>
+              </div>
+              {/* Adresa */}
+              <div className="bg-white p-6 rounded-xl shadow-lg shadow-secondary">
+                <div className="">
+                  <p className="font-semibold">Naturkop doo: Sedište</p>
+                  <p>Garevina bb</p>
+                  <p>37234 Gornji Stupanj</p>
                 </div>
               </div>
             </motion.div>
@@ -91,29 +89,7 @@ export default function KontaktPage() {
 
       {/* Mapa sekcija */}
       <section className="py-10 md:py-16 text-center">
-        <div className="container mx-auto px-4 md:px-10 grid md:grid-cols-2 gap-7">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-4 md:space-y-8"
-          >
-            {" "}
-            <p className="mb-4 text-sm md:text-xl">
-              <span className="font-semibold">Sedište:</span> Garevina bb 37234
-              Gornji Stupanj
-            </p>{" "}
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23169.224377397397!2d21.161556023917495!3d43.45740190113997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4756656eeea6694d%3A0x5603b20747216eca!2sGarevina!5e0!3m2!1sen!2srs!4v1758834703017!5m2!1sen!2srs"
-              width="600"
-              height="450"
-              style={{ border: "0" }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full rounded-2xl"
-            ></iframe>
-          </motion.div>
+        <div className="container mx-auto px-4 md:px-10 ">
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}

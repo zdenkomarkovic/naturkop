@@ -12,28 +12,11 @@ export default function Footer({ showBlog }: { showBlog: boolean }) {
       transition={{ delay: 0.5 }}
     >
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-6 md:gap-6 mb-6">
-          {/* Logo i osnovne informacije */}
-          <div className=" text-center md:text-left">
-            <p className=" mb-6 text-lg leading-relaxed">
-              Domaći džemovi i voćni namazi vrhunskog kvaliteta pod brendom
-              "Mamina kuhinja".
-            </p>
-            <div className="mb-6">
-              <Image
-                src="/naturkopfooter.png"
-                alt="Naturkop doo"
-                width={250}
-                height={100}
-                className="mx-auto w-full md:mx-0 rounded-full"
-              />
-            </div>
-          </div>
-
+        <div className="grid md:grid-cols-2 gap-6 md:gap-6 mb-6">
           {/* Navigacija */}
           <div className="w-fit mx-auto">
             <h3 className="text-xl font-semibold mb-6">Navigacija</h3>
-            <nav className="space-y-3">
+            <nav className=" flex flex-wrap items-center justify-center gap-6">
               <Link
                 href="/"
                 className="block  hover:text-gray-300 transition-colors"
@@ -74,37 +57,23 @@ export default function Footer({ showBlog }: { showBlog: boolean }) {
               </Link>
             </nav>
           </div>
-
-          {/* Kontakt informacije */}
-          <div className="w-fit mx-auto">
-            <h3 className="text-xl font-semibold mb-6">Kontakt</h3>
-            <div className="space-y-3">
-              <div>
-                <a
-                  href="tel:+38166224502"
-                  className=" hover:text-gray-300 transition-colors"
-                >
-                  +381 66 224 502
-                </a>
-              </div>
-              <div>
-                <a
-                  href="mailto:naturkopdoo@gmail.com"
-                  className=" hover:text-gray-300 transition-colors"
-                >
-                  naturkopdoo@gmail.com
-                </a>
-              </div>
-              <div className="flex gap-2">
-                <p className="font-semibold text-white mb-1">Sediste:</p>
-                <p>Garevina bb - Gornji Stupanj</p>
-              </div>
-              <div className="flex gap-2">
-                <p className="font-semibold text-white mb-1">Ispostava:</p>
-                <p>Istočna 8 - Krusevac-Mudrakovac</p>
-                <p></p>
-              </div>
+          {/* Logo i osnovne informacije */}
+          <div className=" text-center md:px-24">
+            <div className="mb-6">
+              <Image
+                src="/naturkopfooter.png"
+                alt="Naturkop doo"
+                width={250}
+                height={100}
+                className="mx-auto w-full md:mx-0 rounded-3xl"
+              />
             </div>
+            <p className=" text-lg leading-relaxed">
+              PREDUZEĆE ZA PROIZVODNJU I PROMET DOO NATUR KOP GAREVINA
+            </p>
+            <p className="text-lg leading-relaxed">
+              Garevina bb, 37234 Gornji Stupanj - MB 20666226 - PIB 106716188
+            </p>
           </div>
         </div>
 
