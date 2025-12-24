@@ -111,7 +111,7 @@ export default function Header({ showBlog }: { showBlog: boolean }) {
           />
         </Link>
         <DesktopNav showBlog={showBlog} />
-        <Link href="tel:+38166224502">
+        {/* <Link href="tel:+38166224502">
           <motion.button
             whileHover={{
               color: "hsl(var(--foreground))",
@@ -122,7 +122,7 @@ export default function Header({ showBlog }: { showBlog: boolean }) {
             <PhoneIcon />
             <p className="">+38166 224 502</p>
           </motion.button>
-        </Link>
+        </Link> */}
         <MobileMenu showBlog={showBlog} />
       </nav>
     </header>

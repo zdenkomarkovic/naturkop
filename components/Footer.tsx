@@ -16,7 +16,7 @@ export default function Footer({ showBlog }: { showBlog: boolean }) {
           {/* Navigacija */}
           <div className="w-fit mx-auto">
             <h3 className="text-xl font-semibold mb-6">Navigacija</h3>
-            <nav className=" flex flex-wrap items-center justify-center gap-6">
+            <nav className=" flex flex-wrap items-center justify-center gap-3 md:gap-6">
               <Link
                 href="/"
                 className="block  hover:text-gray-300 transition-colors"
