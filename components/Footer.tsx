@@ -24,7 +24,7 @@ export default function Footer({ showBlog }: { showBlog: boolean }) {
                 Početna
               </Link>
               <Link
-                href="/#o-nama"
+                href="/o-nama"
                 className="block  hover:text-gray-300 transition-colors"
               >
                 O nama

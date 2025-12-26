@@ -14,7 +14,11 @@
       "Bash(node -e:*)",
       "Bash(node test-blog.js:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(if [ -d \"app/o-nama\" ])",
+      "Bash(then echo \"Directory exists\")",
+      "Bash(else mkdir -p app/o-nama)",
+      "Bash(ls:*)"
     ]
   }
 }

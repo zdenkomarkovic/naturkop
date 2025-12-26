@@ -1,17 +1,95 @@
-import Image from "@/node_modules/next/image";
+"use client";
+import { motion } from "framer-motion";
 import React from "react";
 
 const BackgroundImage = () => {
   return (
-    <div className="relative flex min-h-[30dvh]">
-      {/* <div className="absolute top-0 left-0 w-full h-full bg-black/20 z-[1]" /> */}
-      <Image
-        src={"/pozadina.jpg"}
-        alt="slep puric"
-        fill
-        className="w-full h-full  object-cover"
-      />
-    </div>
+    <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-center justify-center">
+      {/* Parallax pozadinska slika */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: "url('/background.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+
+      {/* Sadržaj */}
+      <div className="relative z-10 container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center text-white mb-12"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            Zašto odabrati nas?
+          </h2>
+          <p className="text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed">
+            Svaki naš proizvod nosi dušu domaće kuhinje i bogatstvo prirode
+          </p>
+        </motion.div>
+
+        {/* Kartice */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
+          >
+            <div className="text-5xl mb-4">🍓</div>
+            <h3 className="text-xl font-bold mb-3">100% Prirodno</h3>
+            <p className="text-sm leading-relaxed opacity-90">
+              Samo prirodni sastojci bez veštačkih aditiva i konzervansa
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
+          >
+            <div className="text-5xl mb-4">🏡</div>
+            <h3 className="text-xl font-bold mb-3">Domaća Tradicija</h3>
+            <p className="text-sm leading-relaxed opacity-90">
+              Recepti zasnovani na tradicionalnim metodama pripreme
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
+          >
+            <div className="text-5xl mb-4">✅</div>
+            <h3 className="text-xl font-bold mb-3">Kontrolisan Kvalitet</h3>
+            <p className="text-sm leading-relaxed opacity-90">
+              Stroga kontrola kvaliteta u svakoj fazi proizvodnje
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
+          >
+            <div className="text-5xl mb-4">🌾</div>
+            <h3 className="text-xl font-bold mb-3">Lokalna Proizvodnja</h3>
+            <p className="text-sm leading-relaxed opacity-90">
+              Sveže voće iz naših krajeva za autentičan ukus
+            </p>
+          </motion.div>
+        </div>
+      </div>
+    </section>
   );
 };
 

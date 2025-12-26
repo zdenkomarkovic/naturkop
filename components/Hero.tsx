@@ -21,7 +21,7 @@ export default function Hero() {
           className="md:hidden object-cover max-h-[50%] "
           priority
         /> */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
       {/* Sadržaj */}
@@ -65,7 +65,7 @@ export default function Hero() {
               Kontaktirajte nas
             </a>
             <a
-              href="#o-nama"
+              href="/o-nama"
               className="border-2 border-white text-white hover:bg-white hover:text-gray-900 md:px-8 px-4 md:py-4 py-1.5 rounded-full md:text-lg text-base font-semibold transition-colors duration-300"
             >
               Saznajte više

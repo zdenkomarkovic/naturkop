@@ -5,7 +5,7 @@ export const navList = [
   },
   {
     title: "O nama",
-    link: "/#o-nama",
+    link: "/o-nama",
   },
   {
     title: "Proizvodi",
