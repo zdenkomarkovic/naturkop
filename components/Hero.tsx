@@ -4,23 +4,23 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative h-[100dvh] flex items-end justify-center overflow-hidden md:pb-20 pb-6">
+    <section className="relative h-[100dvh] bg-[#231208] flex items-end justify-center overflow-hidden md:pb-20 pb-6">
       {/* Pozadinska slika */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute bg-[#231208] top-[7%] left-0 right-0 bottom-0 md:inset-0 z-0">
         <Image
-          src="/images/d-min.png"
-          alt="Pozadina"
+          src="/hero1.jpg"
+          alt="mamina kuhinja"
           fill
-          className="hidden md:block object-cover"
+          className="md:block object-cover object-[65%_20%] md:object-center max-h-[55%] md:max-h-full"
           priority
         />
-        <Image
-          src="/images/m-min.png"
+        {/* <Image
+          src="/hero1.jpg"
           alt="Pozadina"
           fill
-          className="md:hidden object-cover"
+          className="md:hidden object-cover max-h-[50%] "
           priority
-        />
+        /> */}
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
