@@ -21,7 +21,7 @@ export default function Hero() {
           className="md:hidden object-cover max-h-[50%] "
           priority
         /> */}
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/25"></div>
       </div>
 
       {/* Sadržaj */}
@@ -44,12 +44,11 @@ export default function Hero() {
               style={{ width: "100%" }}
             />
           </div>
-          <p className="text-xl md:text-2xl  lg:text-3xl md:mb-8 mb-4 font-light">
-            Domaći džemovi i voćni namazi
+          <p className="text-xl md:text-2xl  lg:text-3xl  mb-2 font-light">
+            Ukus koji budi sećanja na detinjstvo
           </p>
-          <p className="text-base md:text-xl md:mb-12 mb-5 max-w-6xl md:leading-relaxed">
-            Autentičan ukus domaće tradicije. Prirodna svežina i bogatstvo voća
-            sa naših prostora u svakom proizvodu "Mamina kuhinja" brenda.
+          <p className="text-lg md:text-3xl md:mb-12 mb-5 max-w-6xl md:leading-relaxed">
+            Domaći džem od čistog voća bez veštačkih boja i aroma
           </p>
 
           <motion.div

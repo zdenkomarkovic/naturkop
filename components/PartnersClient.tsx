@@ -1,13 +1,20 @@
 "use client";
 import { motion } from "framer-motion";
-import { MapPinIcon, StoreIcon, ShoppingBagIcon, PhoneIcon, MailIcon, ExternalLinkIcon } from "lucide-react";
+import {
+  MapPinIcon,
+  StoreIcon,
+  ShoppingBagIcon,
+  PhoneIcon,
+  MailIcon,
+  ExternalLinkIcon,
+} from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
 interface Partner {
   _id: string;
   name: string;
-  type: 'maloprodaja' | 'veleprodaja';
+  type: "maloprodaja" | "veleprodaja";
   location: string;
   address?: string;
   phone?: string;
@@ -26,10 +33,10 @@ interface PartnersClientProps {
 }
 
 function PartnerCard({ partner }: { partner: Partner }) {
-  const isRetail = partner.type === 'maloprodaja';
-  const iconColor = isRetail ? 'text-primary' : 'text-secondary';
-  const hoverColor = isRetail ? 'hover:text-primary' : 'hover:text-secondary';
-  const badgeBg = isRetail ? 'bg-primary' : 'bg-secondary';
+  const isRetail = partner.type === "maloprodaja";
+  const iconColor = isRetail ? "text-primary" : "text-secondary";
+  const hoverColor = isRetail ? "hover:text-primary" : "hover:text-secondary";
+  const badgeBg = isRetail ? "bg-primary" : "bg-secondary";
   const Icon = isRetail ? ShoppingBagIcon : StoreIcon;
 
   return (
@@ -46,17 +53,19 @@ function PartnerCard({ partner }: { partner: Partner }) {
       )}
 
       {/* Oznaka tipa */}
-      <div className={`inline-flex items-center gap-1 ${badgeBg} text-white px-2 py-0.5 rounded-full text-xs font-medium mb-3`}>
+      <div
+        className={`inline-flex items-center gap-1 ${badgeBg} text-white px-2 py-0.5 rounded-full text-xs font-medium mb-3`}
+      >
         <Icon className="w-3 h-3" />
-        <span>{isRetail ? 'Maloprodaja' : 'Veleprodaja'}</span>
+        <span>{isRetail ? "Maloprodaja" : "Veleprodaja"}</span>
       </div>
 
-      <h4 className="text-xl font-bold text-gray-900 mb-2">
-        {partner.name}
-      </h4>
+      <h4 className="text-xl font-bold text-gray-900 mb-2">{partner.name}</h4>
       <div className="space-y-2 text-gray-600">
         <div className="flex items-start">
-          <MapPinIcon className={`w-5 h-5 ${iconColor} mr-2 flex-shrink-0 mt-0.5`} />
+          <MapPinIcon
+            className={`w-5 h-5 ${iconColor} mr-2 flex-shrink-0 mt-0.5`}
+          />
           <span>
             {partner.location}
             {partner.address && `, ${partner.address}`}
@@ -80,7 +89,9 @@ function PartnerCard({ partner }: { partner: Partner }) {
         )}
         {partner.website && (
           <div className="flex items-center">
-            <ExternalLinkIcon className={`w-5 h-5 ${iconColor} mr-2 flex-shrink-0`} />
+            <ExternalLinkIcon
+              className={`w-5 h-5 ${iconColor} mr-2 flex-shrink-0`}
+            />
             <a
               href={partner.website}
               target="_blank"
@@ -119,9 +130,13 @@ function PartnerSlider({ partners }: { partners: Partner[] }) {
           setDragOffset(dragOffset + info.offset.x);
           setIsPaused(false);
         }}
-        animate={!isPaused ? {
-          x: [dragOffset, dragOffset - (100 / 3) + "%"],
-        } : undefined}
+        animate={
+          !isPaused
+            ? {
+                x: [dragOffset, dragOffset - 100 / 3 + "%"],
+              }
+            : undefined
+        }
         transition={{
           x: {
             repeat: Infinity,
@@ -134,7 +149,10 @@ function PartnerSlider({ partners }: { partners: Partner[] }) {
         onMouseLeave={() => setIsPaused(false)}
       >
         {duplicatedPartners.map((partner, index) => (
-          <div key={`${partner._id}-${index}`} className="w-[350px] flex-shrink-0">
+          <div
+            key={`${partner._id}-${index}`}
+            className="w-[350px] flex-shrink-0"
+          >
             <PartnerCard partner={partner} />
           </div>
         ))}
@@ -180,7 +198,7 @@ export default function PartnersClient({ partners }: PartnersClientProps) {
             viewport={{ once: true }}
             className="bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-lg text-center"
           >
-            <h3 className="text-2xl font-bold mb-4">
+            <h3 className="text-2xl font-bold mb-4 text-white">
               Želite da postanete naš partner?
             </h3>
             <p className="text-lg mb-6 opacity-90">
@@ -210,8 +228,8 @@ export default function PartnersClient({ partners }: PartnersClientProps) {
             className="mt-12 text-center"
           >
             <p className="text-gray-600 italic">
-              * Lista prodajnih mesta se redovno ažurira. Za najtačnije informacije,
-              kontaktirajte nas direktno.
+              * Lista prodajnih mesta se redovno ažurira. Za najtačnije
+              informacije, kontaktirajte nas direktno.
             </p>
           </motion.div>
         </motion.div>
