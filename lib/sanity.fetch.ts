@@ -3,7 +3,7 @@ import {
   blogPostsQuery,
   blogPostBySlugQuery,
   partnersQuery,
-  partnersByTypeQuery,
+  collaboratorsQuery,
 } from './sanity.queries';
 
 // Blog fetch functions
@@ -48,12 +48,13 @@ export async function getAllPartners() {
   }
 }
 
-export async function getPartnersByType(type: 'maloprodaja' | 'veleprodaja') {
+// Collaborator fetch functions
+export async function getAllCollaborators() {
   try {
-    const partners = await client.fetch(partnersByTypeQuery, { type }, { cache: 'no-store' });
-    return partners;
+    const collaborators = await client.fetch(collaboratorsQuery, {}, { cache: 'no-store' });
+    return collaborators;
   } catch (error) {
-    console.error('Error fetching partners by type:', error);
+    console.error('Error fetching collaborators:', error);
     return [];
   }
 }

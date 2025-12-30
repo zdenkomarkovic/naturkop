@@ -94,11 +94,7 @@ export default function Header({ showBlog }: { showBlog: boolean }) {
 
   return (
     <header
-      className={`flex justify-center ${
-        scrolled
-          ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md"
-          : "bg-transparent"
-      }  fixed top-0 left-0 right-0 z-[10] transition-colors py-1.5`}
+      className={`flex justify-center bg-white fixed top-0 left-0 right-0 z-[10]`}
     >
       <nav className="flex items-center justify-between px-4  max-w-[80rem] w-full text-primary font-bold">
         <Link href="/" className="">
@@ -106,8 +102,8 @@ export default function Header({ showBlog }: { showBlog: boolean }) {
             src="/naturkopfooter.png"
             alt="naturkop doo"
             width={220}
-            height={75}
-            className="rounded-full w-[120px] md:w-[220px]"
+            height={90}
+            className=" w-[160px] md:w-[240px]"
           />
         </Link>
         <DesktopNav showBlog={showBlog} />

@@ -63,12 +63,6 @@ export default function Hero() {
             >
               Kontaktirajte nas
             </a>
-            <a
-              href="/o-nama"
-              className="border-2 border-white text-white hover:bg-white hover:text-gray-900 md:px-8 px-4 md:py-4 py-1.5 rounded-full md:text-lg text-base font-semibold transition-colors duration-300"
-            >
-              Saznajte više
-            </a>
           </motion.div>
         </motion.div>
       </div>

@@ -1,8 +1,8 @@
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'partner',
-  title: 'Partneri',
+  name: 'collaborator',
+  title: 'Saradnici',
   type: 'document',
   fields: [
     defineField({
@@ -35,7 +35,7 @@ export default defineType({
     prepare(selection) {
       const { title, media } = selection;
       return {
-        title: title || 'Partner bez naziva',
+        title: title || 'Saradnik bez naziva',
         media,
       };
     },

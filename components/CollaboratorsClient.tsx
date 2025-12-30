@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
-interface Partner {
+interface Collaborator {
   _id: string;
   name?: string;
   logo?: {
@@ -13,18 +13,18 @@ interface Partner {
   };
 }
 
-interface PartnersClientProps {
-  partners: Partner[];
+interface CollaboratorsClientProps {
+  collaborators: Collaborator[];
 }
 
-function PartnerLogo({ partner }: { partner: Partner }) {
+function CollaboratorLogo({ collaborator }: { collaborator: Collaborator }) {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow h-32 flex items-center justify-center">
-      {partner.logo?.asset?.url && (
+      {collaborator.logo?.asset?.url && (
         <div className="relative h-full w-full">
           <Image
-            src={partner.logo.asset.url}
-            alt={partner.name || "Partner logo"}
+            src={collaborator.logo.asset.url}
+            alt={collaborator.name || "Collaborator logo"}
             fill
             className="object-contain"
           />
@@ -34,12 +34,12 @@ function PartnerLogo({ partner }: { partner: Partner }) {
   );
 }
 
-function PartnerSlider({ partners }: { partners: Partner[] }) {
+function CollaboratorSlider({ collaborators }: { collaborators: Collaborator[] }) {
   const [isPaused, setIsPaused] = useState(false);
   const [dragOffset, setDragOffset] = useState(0);
 
-  // Dupliraj partnere za beskonačni efekat
-  const duplicatedPartners = [...partners, ...partners, ...partners];
+  // Dupliraj saradnike za beskonačni efekat
+  const duplicatedCollaborators = [...collaborators, ...collaborators, ...collaborators];
 
   return (
     <div className="relative overflow-hidden cursor-grab active:cursor-grabbing">
@@ -65,19 +65,19 @@ function PartnerSlider({ partners }: { partners: Partner[] }) {
           x: {
             repeat: Infinity,
             repeatType: "loop",
-            duration: partners.length * 5,
+            duration: collaborators.length * 5,
             ease: "linear",
           },
         }}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        {duplicatedPartners.map((partner, index) => (
+        {duplicatedCollaborators.map((collaborator, index) => (
           <div
-            key={`${partner._id}-${index}`}
+            key={`${collaborator._id}-${index}`}
             className="w-[250px] flex-shrink-0"
           >
-            <PartnerLogo partner={partner} />
+            <CollaboratorLogo collaborator={collaborator} />
           </div>
         ))}
       </motion.div>
@@ -85,9 +85,9 @@ function PartnerSlider({ partners }: { partners: Partner[] }) {
   );
 }
 
-export default function PartnersClient({ partners }: PartnersClientProps) {
+export default function CollaboratorsClient({ collaborators }: CollaboratorsClientProps) {
   return (
-    <section id="partneri" className="py-20 bg-white">
+    <section id="saradnici" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -97,21 +97,21 @@ export default function PartnersClient({ partners }: PartnersClientProps) {
           className="max-w-6xl mx-auto"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
-            Gde možete kupiti naše proizvode
+            Naši saradnici
           </h2>
           <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
-            Proizvodi "Mamina kuhinja" dostupni su na više lokacija
+            Sarađujemo sa renomiranim partnerima širom regiona
           </p>
 
-          {partners.length === 0 ? (
+          {collaborators.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-xl text-gray-600">
-                Uskoro ćemo objaviti listu naših partnera.
+                Uskoro ćemo objaviti listu naših saradnika.
               </p>
             </div>
           ) : (
             <div className="mb-16">
-              <PartnerSlider partners={partners} />
+              <CollaboratorSlider collaborators={collaborators} />
             </div>
           )}
 
@@ -123,10 +123,10 @@ export default function PartnersClient({ partners }: PartnersClientProps) {
             className="bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-lg text-center"
           >
             <h3 className="text-2xl font-bold mb-4 text-white">
-              Želite da postanete naš partner?
+              Želite da postanete naš saradnik?
             </h3>
             <p className="text-lg mb-6 opacity-90">
-              Kontaktirajte nas za mogućnosti distribucije i saradnje
+              Kontaktirajte nas za mogućnosti saradnje i partnerstva
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -152,7 +152,7 @@ export default function PartnersClient({ partners }: PartnersClientProps) {
             className="mt-12 text-center"
           >
             <p className="text-gray-600 italic">
-              * Lista prodajnih mesta se redovno ažurira. Za najtačnije
+              * Lista saradnika se redovno ažurira. Za najtačnije
               informacije, kontaktirajte nas direktno.
             </p>
           </motion.div>

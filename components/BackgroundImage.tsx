@@ -31,7 +31,44 @@ const BackgroundImage = () => {
         </motion.div>
 
         {/* Kartice */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
+          >
+            <h3 className="text-xl font-bold mb-3 text-white">
+              Kvalitetna sirovina i kontrolisan proces
+            </h3>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
+          >
+            <h3 className="text-xl font-bold mb-3 text-white">
+              Pakovanje prema vašim specifikacijama
+            </h3>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
+          >
+            <h3 className="text-xl font-bold mb-3 text-white">
+              Poštovanje rokova i profesionalna podrška
+            </h3>
+          </motion.div>
+        </div>
+        {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -87,7 +124,7 @@ const BackgroundImage = () => {
               Sveže voće iz naših krajeva za autentičan ukus
             </p>
           </motion.div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

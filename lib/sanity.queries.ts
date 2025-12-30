@@ -39,14 +39,6 @@ export const partnersQuery = groq`
   *[_type == "partner"] | order(order asc, name asc) {
     _id,
     name,
-    type,
-    location,
-    address,
-    city,
-    phone,
-    email,
-    website,
-    description,
     logo {
       asset->{
         _id,
@@ -56,17 +48,11 @@ export const partnersQuery = groq`
   }
 `;
 
-export const partnersByTypeQuery = groq`
-  *[_type == "partner" && type == $type] | order(order asc, name asc) {
+// Collaborator queries
+export const collaboratorsQuery = groq`
+  *[_type == "collaborator"] | order(order asc, name asc) {
     _id,
     name,
-    location,
-    address,
-    city,
-    phone,
-    email,
-    website,
-    description,
     logo {
       asset->{
         _id,
