@@ -5,6 +5,7 @@ import Brands from "@/components/Brands";
 import Partners from "@/components/Partners";
 import Collaborators from "@/components/Collaborators";
 import About from "@/components/About";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Collaborators />
       <BackgroundImage />
       <Brands />
+      <Testimonials />
     </main>
   );
 }
