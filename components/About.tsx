@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -16,7 +17,7 @@ export default function About() {
             O nama
           </h2>
 
-          <div className="mb-12 text-center">
+          {/* <div className="mb-12 text-center">
             <h3 className="text-2xl md:text-3xl font-bold text-primary mb-6">
               Mamina kuhinja
             </h3>
@@ -32,31 +33,41 @@ export default function About() {
               Pod brendom <span className="font-semibold text-primary">"Mamina kuhinja"</span> stvaramo
               proizvode koji podsećaju na miris i ukus pravog doma — jednostavno, prirodno i iskreno.
             </p>
-          </div>
+          </div> */}
 
           <div className="mb-12 bg-gray-50 p-8 rounded-lg">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Opis preduzeća</h3>
+            {/* <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Opis preduzeća
+            </h3> */}
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              Naturkop je porodično preduzeće koje se bavi preradom voća i proizvodnjom prirodnih voćnih
-              prerađevina. U našem proizvodnom pogonu u Mudrakovcu nastaju pažljivo pripremljeni džemovi,
-              voćni namazi i drugi proizvodi od voća, koji čuvaju autentičan ukus domaćeg voća i tradicije.
+              Naturkop je porodično preduzeće koje se bavi preradom voća i
+              proizvodnjom prirodnih voćnih prerađevina. U našem proizvodnom
+              pogonu u Mudrakovcu nastaju pažljivo pripremljeni džemovi, voćni
+              namazi i drugi proizvodi od voća, koji čuvaju autentičan ukus
+              domaćeg voća i tradicije.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              Naš brend "Mamina kuhinja" prepoznatljiv je po kvalitetu, jednostavnosti i ukusu koji podseća
-              na domaće tegle iz bakinog špajza.
+              Naš brend "Mamina kuhinja" prepoznatljiv je po kvalitetu,
+              jednostavnosti i ukusu koji podseća na domaće tegle iz bakinog
+              špajza.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Pored sopstvene linije proizvoda, Naturkop nudi i <span className="font-semibold">uslužnu proizvodnju
-              i pakovanje PL (private label)</span> programa za partnere koji žele sopstvenu marku voćnih proizvoda.
+              Pored sopstvene linije proizvoda, Naturkop nudi i{" "}
+              <span className="font-semibold">
+                uslužnu proizvodnju i pakovanje PL (private label)
+              </span>{" "}
+              programa za partnere koji žele sopstvenu marku voćnih proizvoda.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
+          {/* <div className="grid md:grid-cols-3 gap-8 mt-12">
             <div className="text-center border-secondary border-2 rounded-full px-4 py-10 md:py-6 shadow-lg shadow-secondary">
               <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🌱</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Kvalitetna sirovina</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Kvalitetna sirovina
+              </h3>
               <p className="text-gray-600">
                 Pažljivo birano voće sa naših prostora
               </p>
@@ -81,6 +92,16 @@ export default function About() {
                 Siguran izvor domaćih džemova i namaza
               </p>
             </div>
+          </div> */}
+
+          <div className="mt-12">
+            <Image
+              src="/onama.jpg"
+              alt="O nama"
+              width={1200}
+              height={600}
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
           </div>
         </motion.div>
       </div>

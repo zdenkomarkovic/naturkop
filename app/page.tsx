@@ -13,9 +13,9 @@ export default function Home() {
       <About />
       <Products />
       <Partners />
+      <Collaborators />
       <BackgroundImage />
       <Brands />
-      <Collaborators />
     </main>
   );
 }

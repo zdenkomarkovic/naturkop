@@ -96,12 +96,12 @@ export default function PartnersClient({ partners }: PartnersClientProps) {
           viewport={{ once: true }}
           className="max-w-6xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
-            Gde možete kupiti naše proizvode
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+            Maminu kuhinju možete pronaći ovde
           </h2>
-          <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+          {/* <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
             Proizvodi "Mamina kuhinja" dostupni su na više lokacija
-          </p>
+          </p> */}
 
           {partners.length === 0 ? (
             <div className="text-center py-12">
@@ -110,12 +110,28 @@ export default function PartnersClient({ partners }: PartnersClientProps) {
               </p>
             </div>
           ) : (
-            <div className="mb-16">
+            <div className="mb-14">
               <PartnerSlider partners={partners} />
             </div>
           )}
-
           <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="py-12 text-center bg-primary/10 p-8 rounded-lg"
+          >
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Uslužna proizvodnja robnih marki
+            </h3>
+            <p className="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
+              Kvalitetna sirovina, kontrolisani proces proizvodnje i poštovanje
+              rokova čine Naturkop pouzdanim partnerom u oblasti prerade voća —
+              bilo da ste kupac, distributer ili poslovni saradnik koji traži
+              siguran izvor domaćih džemova i namaza.
+            </p>
+          </motion.div>
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -155,7 +171,7 @@ export default function PartnersClient({ partners }: PartnersClientProps) {
               * Lista prodajnih mesta se redovno ažurira. Za najtačnije
               informacije, kontaktirajte nas direktno.
             </p>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>

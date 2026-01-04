@@ -129,7 +129,7 @@ export default function Products() {
               </motion.div>
             ))}
           </div>
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -145,7 +145,7 @@ export default function Products() {
               bilo da ste kupac, distributer ili poslovni saradnik koji traži
               siguran izvor domaćih džemova i namaza.
             </p>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
 

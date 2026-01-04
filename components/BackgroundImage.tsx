@@ -37,8 +37,11 @@ const BackgroundImage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
+            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full p-6 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
           >
+            <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">🌱</span>
+            </div>
             <h3 className="text-xl font-bold mb-3 text-white">
               Kvalitetna sirovina i kontrolisan proces
             </h3>
@@ -49,8 +52,12 @@ const BackgroundImage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
+            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full p-6 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
           >
+            {" "}
+            <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">🏭</span>
+            </div>
             <h3 className="text-xl font-bold mb-3 text-white">
               Pakovanje prema vašim specifikacijama
             </h3>
@@ -61,8 +68,12 @@ const BackgroundImage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
+            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full p-6 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
           >
+            {" "}
+            <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">⭐</span>
+            </div>
             <h3 className="text-xl font-bold mb-3 text-white">
               Poštovanje rokova i profesionalna podrška
             </h3>
