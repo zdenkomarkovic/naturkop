@@ -105,7 +105,7 @@ export default function Products() {
                 className="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
                 onClick={() => setSelectedProduct(index)}
               >
-                <div className="relative grid grid-cols-2 h-96 p-4">
+                <div className="relative grid grid-cols-2 h-96 p-2 md:p-4">
                   <div className="relative w-full">
                     <Image
                       src={product.imageLarge}
@@ -123,18 +123,18 @@ export default function Products() {
                     />
                   </div>
                   <div className="absolute top-0 left-0 right-0 pt-10">
-                    <h3 className="text-xl font-bold text-gray-900 text-center">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 text-center">
                       {product.name}
                     </h3>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 pb-10">
-                    <p className="text-gray-600 text-sm text-center">
+                    <p className="text-gray-600 text-xs md:text-sm text-center">
                       Mamina kuhinja. Domaći ukus koji se pamti.
                     </p>
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-gray-600 text-base">
+                  <p className="text-gray-600 text-sm md:text-base">
                     {product.description}
                   </p>
                 </div>
