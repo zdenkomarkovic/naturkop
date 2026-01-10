@@ -1,20 +1,26 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section className="relative h-[100dvh] bg-[#231208] flex items-end justify-center overflow-hidden md:pb-20 pb-6">
-      {/* Pozadinski video */}
+      {/* Pozadinska slika */}
       <div className="absolute bg-[#231208] top-[7%] left-0 right-0 bottom-0 md:inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/images/video-017618295154b11f897823e6bdc8e522-V.mp4" type="video/mp4" />
-        </video>
+        <Image
+          src="/hero1.jpg"
+          alt="mamina kuhinja"
+          fill
+          className="md:block object-cover object-[65%_20%] md:object-center max-h-[55%] md:max-h-full"
+          priority
+        />
+        {/* <Image
+          src="/hero1.jpg"
+          alt="Pozadina"
+          fill
+          className="md:hidden object-cover max-h-[50%] "
+          priority
+        /> */}
         <div className="absolute inset-0 bg-black/25"></div>
       </div>
 

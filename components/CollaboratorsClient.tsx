@@ -97,7 +97,10 @@ export default function CollaboratorsClient({
   collaborators,
 }: CollaboratorsClientProps) {
   return (
-    <section id="saradnici" className="pb-20 bg-white">
+    <section
+      id="saradnici"
+      className="pb-20  bg-gradient-to-t from-[#9b7e74]/10 to-[#9b7e74]/40"
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

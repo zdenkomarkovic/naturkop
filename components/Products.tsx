@@ -58,7 +58,10 @@ export default function Products() {
   }, [selectedProduct]);
 
   return (
-    <section id="proizvodi" className="py-20 bg-white">
+    <section
+      id="proizvodi"
+      className="py-20  bg-gradient-to-b from-[#9b7e74]/10 to-[#9b7e74]/40"
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -134,7 +137,7 @@ export default function Products() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-gray-600 text-sm md:text-base">
+                  <p className="text-gray-600 text-sm md:text-base text-center">
                     {product.description}
                   </p>
                 </div>

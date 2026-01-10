@@ -3,7 +3,10 @@ import { motion } from "framer-motion";
 
 export default function Brands() {
   return (
-    <section id="robne-marke" className="py-20 bg-muted overflow-hidden">
+    <section
+      id="robne-marke"
+      className="py-20  bg-gradient-to-b from-[#9b7e74]/10 to-[#9b7e74]/40 overflow-hidden"
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
