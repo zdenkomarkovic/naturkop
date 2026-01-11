@@ -60,8 +60,14 @@ export default function Products() {
   return (
     <section
       id="proizvodi"
-      className="py-20  bg-gradient-to-b from-[#9b7e74]/10 to-[#9b7e74]/40"
+      className="pb-20 pt-5  bg-gradient-to-b from-[#9b7e74]/10 to-[#9b7e74]/40"
     >
+      {/* <svg
+        viewBox="0 0 1440 90"
+        className=" w-full fill-current text-[#9b7e74]/30"
+      >
+        <path d="M0,32L60,37.3C120,43,240,53,360,48C480,43,600,21,720,21.3C840,21,960,43,1080,53.3C1200,64,1320,64,1380,64L1440,64L1440,0L0,0Z" />
+      </svg> */}
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -137,7 +143,7 @@ export default function Products() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-gray-600 text-sm md:text-base text-center">
+                  <p className="text-gray-600 text-sm md:text-base text-justify">
                     {product.description}
                   </p>
                 </div>

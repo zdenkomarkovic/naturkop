@@ -4,7 +4,7 @@ import React from "react";
 
 const BackgroundImage = () => {
   return (
-    <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-center justify-center">
+    <section className="relative min-h-[65vh] flex items-center justify-center">
       {/* Parallax pozadinska slika */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
@@ -14,7 +14,7 @@ const BackgroundImage = () => {
       </div>
 
       {/* Sadržaj */}
-      <div className="relative z-10 container mx-auto px-4">
+      <div className="relative py-5 container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

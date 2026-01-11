@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section className="py-20 bg-gradient-to-b from-[#9b7e74]/10 to-[#9b7e74]/40">
+    <section className="py-20 relative bg-gradient-to-b from-[#9b7e74]/10 to-[#9b7e74]/40">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -35,7 +35,7 @@ export default function About() {
             </p>
           </div> */}
 
-          <div className="mb-12 bg-gray-50 p-8 rounded-lg text-center">
+          <div className="mb-12 bg-gray-50 p-8 rounded-lg text-justify">
             {/* <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Opis preduzeća
             </h3> */}
@@ -105,6 +105,12 @@ export default function About() {
           </div>
         </motion.div>
       </div>
+      {/* <svg
+        viewBox="0 0 1440 90"
+        className="absolute bottom-0 left-0 w-full fill-current text-[#9b7e74]/40"
+      >
+        <path d="M0,32L60,37.3C120,43,240,53,360,48C480,43,600,21,720,21.3C840,21,960,43,1080,53.3C1200,64,1320,64,1380,64L1440,64L1440,0L0,0Z" />
+      </svg> */}
     </section>
   );
 }

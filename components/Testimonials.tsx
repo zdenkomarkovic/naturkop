@@ -101,7 +101,7 @@ export default function Testimonials() {
                         </div>
                       </div>
 
-                      <p className="text-gray-700 mb-6 flex-grow italic leading-relaxed">
+                      <p className="text-gray-700 mb-6 flex-grow italic leading-relaxed text-justify">
                         "{testimonial.text}"
                       </p>
 
