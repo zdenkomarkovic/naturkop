@@ -19,7 +19,8 @@
       "Bash(then echo \"Directory exists\")",
       "Bash(else mkdir -p app/o-nama)",
       "Bash(ls:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(timeout:*)"
     ]
   }
 }

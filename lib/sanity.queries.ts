@@ -8,12 +8,7 @@ export const blogPostsQuery = groq`
     slug,
     excerpt,
     author,
-    mainImage {
-      asset->{
-        _id,
-        url
-      }
-    }
+    mainImage
   }
 `;
 
@@ -25,12 +20,7 @@ export const blogPostBySlugQuery = groq`
     excerpt,
     author,
     "body": content,
-    mainImage {
-      asset->{
-        _id,
-        url
-      }
-    }
+    mainImage
   }
 `;
 
@@ -39,12 +29,7 @@ export const partnersQuery = groq`
   *[_type == "partner"] | order(order asc, name asc) {
     _id,
     name,
-    logo {
-      asset->{
-        _id,
-        url
-      }
-    }
+    logo
   }
 `;
 
@@ -53,11 +38,6 @@ export const collaboratorsQuery = groq`
   *[_type == "collaborator"] | order(order asc, name asc) {
     _id,
     name,
-    logo {
-      asset->{
-        _id,
-        url
-      }
-    }
+    logo
   }
 `;
