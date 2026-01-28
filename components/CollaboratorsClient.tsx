@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import { urlFor } from "@/lib/sanityImage";
 
 interface Collaborator {
   _id: string;
@@ -20,10 +21,10 @@ interface CollaboratorsClientProps {
 function CollaboratorLogo({ collaborator }: { collaborator: Collaborator }) {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow h-32 flex items-center justify-center">
-      {collaborator.logo?.asset?.url && (
+      {collaborator.logo && (
         <div className="relative h-full w-full">
           <Image
-            src={collaborator.logo.asset.url}
+            src={urlFor(collaborator.logo).width(300).height(150).auto('format').quality(85).url()}
             alt={collaborator.name || "Collaborator logo"}
             fill
             className="object-contain"

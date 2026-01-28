@@ -42,6 +42,7 @@ const Hero3Images = () => {
               src={Hero1}
               alt="Moderna dnevna soba"
               className="w-full h-[100dvh] object-cover"
+              unoptimized={true}
             />
           </CarouselItem>
           <CarouselItem>
@@ -49,6 +50,7 @@ const Hero3Images = () => {
               src={Hero2}
               alt="Elegantna dnevna soba"
               className="w-full h-[100dvh] object-cover"
+              unoptimized={true}
             />
           </CarouselItem>
           <CarouselItem>
@@ -56,6 +58,7 @@ const Hero3Images = () => {
               src={Hero3}
               alt="Luksuzni plakar"
               className="w-full h-[100dvh] object-cover"
+              unoptimized={true}
             />
           </CarouselItem>
         </CarouselContent>

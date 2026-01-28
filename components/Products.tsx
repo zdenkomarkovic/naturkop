@@ -121,6 +121,7 @@ export default function Products() {
                       alt={`${product.name} - velika tegla`}
                       fill
                       className="object-cover"
+                      unoptimized={true}
                     />
                   </div>
                   <div className="relative w-full">
@@ -129,6 +130,7 @@ export default function Products() {
                       alt={`${product.name} - mala tegla`}
                       fill
                       className="object-cover"
+                      unoptimized={true}
                     />
                   </div>
                   <div className="absolute top-0 left-0 right-0 pt-10">
@@ -209,6 +211,7 @@ export default function Products() {
                     alt={`${products[selectedProduct].name} - velika tegla`}
                     fill
                     className="object-contain"
+                    unoptimized={true}
                   />
                 </div>
                 <div className="relative h-[50vh] md:h-[60vh] w-full">
@@ -217,6 +220,7 @@ export default function Products() {
                     alt={`${products[selectedProduct].name} - mala tegla`}
                     fill
                     className="object-contain"
+                    unoptimized={true}
                   />
                 </div>
               </div>

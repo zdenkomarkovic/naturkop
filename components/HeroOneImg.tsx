@@ -15,6 +15,7 @@ const Hero = () => {
         alt="slep puric"
         fill
         className="w-full h-[100dvh] object-cover"
+        unoptimized={true}
       />
 
       <div className="relative container px-2 md:px-4 mx-auto  flex flex-col gap-6 items-center justify-center z-[1] ">

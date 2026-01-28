@@ -18,7 +18,8 @@
       "Bash(if [ -d \"app/o-nama\" ])",
       "Bash(then echo \"Directory exists\")",
       "Bash(else mkdir -p app/o-nama)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(npm run build:*)"
     ]
   }
 }

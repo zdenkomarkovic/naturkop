@@ -2,6 +2,7 @@ import { getBlogPostBySlug } from "@/lib/sanity.fetch";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PortableText } from "@portabletext/react";
+import { urlFor } from "@/lib/sanityImage";
 
 export default async function BlogPostPage({
   params,
@@ -17,10 +18,10 @@ export default async function BlogPostPage({
   return (
     <main className="min-h-screen py-20">
       <article className="container mx-auto px-4 max-w-7xl">
-        {post.mainImage?.asset?.url && (
+        {post.mainImage && (
           <div className="relative h-96 md:h-[60dvh] w-full mb-8 rounded-lg overflow-hidden">
             <Image
-              src={post.mainImage.asset.url}
+              src={urlFor(post.mainImage).width(1200).height(800).auto('format').quality(85).url()}
               alt={post.title}
               fill
               className="object-cover"

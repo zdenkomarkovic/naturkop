@@ -1,6 +1,7 @@
 import { getAllBlogPosts } from "@/lib/sanity.fetch";
 import Link from "next/link";
 import Image from "next/image";
+import { urlFor } from "@/lib/sanityImage";
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -29,10 +30,10 @@ export default async function BlogPage() {
                 href={`/blog/${post.slug.current}`}
                 className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
               >
-                {post.mainImage?.asset?.url && (
+                {post.mainImage && (
                   <div className="relative h-64 w-full">
                     <Image
-                      src={post.mainImage.asset.url}
+                      src={urlFor(post.mainImage).width(800).height(400).auto('format').quality(85).url()}
                       alt={post.title}
                       fill
                       className="object-cover"

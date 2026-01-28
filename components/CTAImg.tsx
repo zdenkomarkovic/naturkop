@@ -15,6 +15,7 @@ const CTAImg = () => {
           height={200}
           alt=""
           className="rounded-t-xl"
+          unoptimized={true}
         />
         <div className="flex flex-col gap-6 text-center md:text-left">
           <div>

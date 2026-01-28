@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import { urlFor } from "@/lib/sanityImage";
 
 interface Partner {
   _id: string;
@@ -20,10 +21,10 @@ interface PartnersClientProps {
 function PartnerLogo({ partner }: { partner: Partner }) {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow h-32 flex items-center justify-center">
-      {partner.logo?.asset?.url && (
+      {partner.logo && (
         <div className="relative h-full w-full">
           <Image
-            src={partner.logo.asset.url}
+            src={urlFor(partner.logo).width(300).height(150).auto('format').quality(85).url()}
             alt={partner.name || "Partner logo"}
             fill
             className="object-contain"
