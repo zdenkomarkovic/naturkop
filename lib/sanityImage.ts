@@ -1,15 +1,14 @@
-import imageUrlBuilder from '@sanity/image-url';
+import { createImageUrlBuilder } from '@sanity/image-url';
 import { client } from './sanity.client';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
-const builder = imageUrlBuilder(client);
+const builder = createImageUrlBuilder(client);
 
 /**
  * Generisanje optimizovanog URL-a za Sanity slike
  * @param source - Sanity image source objekat
  * @returns Image URL builder
  */
-export function urlFor(source: SanityImageSource) {
+export function urlFor(source: any) {
   return builder.image(source);
 }
 
@@ -21,7 +20,7 @@ export function urlFor(source: SanityImageSource) {
  * @returns Optimizovan URL string
  */
 export function getOptimizedImageUrl(
-  source: SanityImageSource,
+  source: any,
   width: number,
   height?: number
 ): string {
