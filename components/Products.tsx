@@ -4,43 +4,13 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
-// Nacrtani obris kajsije (krug + unutrašnji krug + listić)
-function DrawnFruit({
-  x,
-  y,
-  size = 60,
-  delay = 0,
-  rotate = 0,
-  src = "/fruit_13534539.png",
-}: {
-  x: string;
-  y: string;
-  size?: number;
-  delay?: number;
-  rotate?: number;
-  src?: string;
-}) {
-  return (
-    <motion.img
-      src={src}
-      alt="kajsija"
-      width={size}
-      height={size}
-      style={{ position: "absolute", left: x, top: y, rotate: `${rotate}deg`, pointerEvents: "none", zIndex: 10, objectFit: "contain", filter: "brightness(0) saturate(100%) invert(57%) sepia(24%) saturate(500%) hue-rotate(330deg) brightness(65%)" }}
-      initial={{ opacity: 0, scale: 0 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ type: "spring", stiffness: 400, damping: 15, delay }}
-      viewport={{ once: true, amount: 0 }}
-    />
-  );
-}
 
 const products = [
   {
     name: "Džem od šljive – Mamina kuhinja",
     imageLarge: "/images/MK_SLJIVA_L.jpg",
     imageSmall: "/images/sljiva.jpg",
-    fruit: "/fruit_15612860.png",
+
     description:
       "Šljiva je uvek bila tu. Pouzdana, svoja, bez potrebe da se dokazuje. Džem od šljive Mamine kuhinje pravi se po tradicionalnoj recepturi, od biranih plodova koji daju tamnu boju i pun ukus. Bez veštačkih boja i aroma. Ovo je onaj džem koji se maže sigurno. Bez premišljanja. Znaš kakav je. I znaš da će biti dobar.",
   },
@@ -48,7 +18,7 @@ const products = [
     name: "Džem od višnje – Mamina kuhinja",
     imageLarge: "/images/MK_VISNJA_L.jpg",
     imageSmall: "/images/visnja.jpg",
-    fruit: "/cherry_7101311.png",
+
     description:
       "Višnja nikada nije bila ona koja se svima dopada na prvu. Ima tu malo kiselkastog, malo ozbiljnog. I baš zato ostane. Džem od višnje Mamine kuhinje pravi se po tradicionalnoj recepturi, od zrelih plodova koji daju punu aromu i lepo izbalansiranu slatkoću. Bez veštačkih boja i aroma. Prvi zalogaj iznenadi, drugi se već traži, a treći dođe sam od sebe. Nije za svakoga. Ali ko je voli, zna zašto.",
   },
@@ -56,7 +26,7 @@ const products = [
     name: "Džem od jagode – Mamina kuhinja",
     imageLarge: "/images/MK_JAGODA_L.jpg",
     imageSmall: "/images/jagoda.jpg",
-    fruit: "/strawberry_18643083.png",
+
     description:
       "Sećaš se one kriške hleba sa džemom, one koja se pojede na brzinu, dok neko viče da se vratiš u igru? Jagode su tada mirisale jače. Ili smo mi bili mlađi. Džem od jagode iz Mamine kuhinje pravi se po tradicionalnoj recepturi, od pažljivo biranog voća, uz dodatak slatkoće taman koliko treba. Ne više. Bez veštačkih boja i aroma. Ostaje mekan, pun, prepoznatljiv. Ovo je onaj džem koji danas namažeš uz kafu, a u glavi ti se javi nešto poznato. I to je dovoljno.",
   },
@@ -71,7 +41,7 @@ const products = [
     name: "Džem od šipka – Mamina kuhinja",
     imageLarge: "/images/MK_SIPURAK_L.jpg",
     imageSmall: "/images/sipurak.jpg",
-    fruit: "/dog-rose_3504520.png",
+
     description:
       "Šipak ne traži pažnju. Raste tiho, tvrdoglavo, po svom. Džem od šipka iz Mamine kuhinje priprema se po tradicionalnoj recepturi, od pažljivo obrađenog ploda, sa dodatkom slatkoće koja naglasi njegovu posebnu aromu. Bez veštačkih dodataka. Nije blag. Nije ni očekivan. Ali ima karakter. I ljudi koji ga biraju, to odmah prepoznaju.",
   },
@@ -181,15 +151,6 @@ export default function Products() {
                     <p className="text-gray-600 text-xs md:text-sm text-center">
                       Mamina kuhinja. Domaći ukus koji se pamti.
                     </p>
-                  </div>
-                  {/* Voćke - u posebnom overlay-u iznad svega */}
-                  <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 20 }}>
-                    <DrawnFruit x="8%" y="19%" size={56} delay={0.1} rotate={-15} src={product.fruit ?? "/fruit_13534539.png"} />
-                    <DrawnFruit x="72%" y="2%" size={41} delay={0.3} rotate={20} src={product.fruit ?? "/fruit_13534539.png"} />
-                    <DrawnFruit x="6%" y="60%" size={37} delay={0.5} rotate={10} src={product.fruit ?? "/fruit_13534539.png"} />
-                    <DrawnFruit x="78%" y="55%" size={57} delay={0.4} rotate={-20} src={product.fruit ?? "/fruit_13534539.png"} />
-                    <DrawnFruit x="38%" y="35%" size={55} delay={0.6} rotate={8} src={product.fruit ?? "/fruit_13534539.png"} />
-                    <DrawnFruit x="55%" y="70%" size={44} delay={0.7} rotate={-12} src={product.fruit ?? "/fruit_13534539.png"} />
                   </div>
                 </div>
                 <div className="p-6">

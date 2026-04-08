@@ -1,9 +1,18 @@
 "use client";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Leaf, Factory, Star } from "lucide-react";
 
 const BackgroundImage = () => {
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== "undefined" ? window.innerWidth < 768 : false
+  );
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
   const cards = [
     {
       icon: <Leaf className="w-12 h-12 text-[#9b7e74]" />,
@@ -23,7 +32,7 @@ const BackgroundImage = () => {
   ];
 
   return (
-    <section className="relative py-16 bg-[#faf0eb]">
+    <section className="relative py-16 bg-gradient-to-b from-[#9b7e74]/40 to-[#9b7e74]/10">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, filter: "blur(6px)" }}
@@ -39,18 +48,22 @@ const BackgroundImage = () => {
           {cards.map((card, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={
+                isMobile ? { opacity: 0, x: -80 } : { opacity: 0, y: 25 }
+              }
+              whileInView={
+                isMobile ? { opacity: 1, x: 0 } : { opacity: 1, y: 0 }
+              }
               transition={{
                 duration: 0.7,
                 delay: card.delay,
                 ease: "easeOut",
               }}
               viewport={{ once: true, margin: "-60px" }}
-              className="bg-[#faf0eb] border-4 border-[#9b7e74] rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300"
+              className="bg-gradient-to-b from-[#9b7e74]/10 to-[#9b7e74]/10 border-4 border-[#9b7e74] rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300"
             >
               <div className="mb-5">{card.icon}</div>
-              <h3 className="text-base md:text-lg font-bold text-[#9b7e74] leading-snug">
+              <h3 className="text-xl md:text-lg font-bold text-[#9b7e74] leading-snug">
                 {card.title}
               </h3>
             </motion.div>
@@ -66,7 +79,7 @@ const BackgroundImage = () => {
         className="mt-10 w-full"
       >
         <img
-          src="/background.jpg"
+          src="/20260408_220433.jpg"
           alt="Naturkop pozadina"
           className="w-full object-cover max-h-28 md:max-h-[440px]"
           style={{ objectPosition: "center 60%" }}
