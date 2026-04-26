@@ -24,7 +24,12 @@ function CollaboratorLogo({ collaborator }: { collaborator: Collaborator }) {
       {collaborator.logo && (
         <div className="relative h-full w-full">
           <Image
-            src={urlFor(collaborator.logo).width(300).height(150).auto('format').quality(85).url()}
+            src={urlFor(collaborator.logo)
+              .width(300)
+              .height(150)
+              .auto("format")
+              .quality(85)
+              .url()}
             alt={collaborator.name || "Collaborator logo"}
             fill
             className="object-contain"
@@ -110,13 +115,6 @@ export default function CollaboratorsClient({
           viewport={{ once: true }}
           className="max-w-6xl mx-auto"
         >
-          {/* <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
-            Naši saradnici
-          </h2>
-          <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
-            Sarađujemo sa renomiranim partnerima širom regiona
-          </p> */}
-
           {collaborators.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-xl text-gray-600">
@@ -133,24 +131,24 @@ export default function CollaboratorsClient({
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-lg text-center"
+            className="bg-[#9b7e74]/20 border border-[#9b7e74] rounded-lg text-center p-8 shadow-sm"
           >
-            <h3 className="text-2xl font-bold mb-4 text-white">
+            <h3 className="text-2xl font-bold mb-4 text-gray-900">
               Želite da postanete naš partner?
             </h3>
-            <p className="text-lg mb-6 opacity-90">
+            <p className="text-lg mb-6 text-gray-700">
               Kontaktirajte nas za mogućnosti distribucije i saradnje
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/kontakt"
-                className="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-semibold transition-colors duration-300"
+                className="bg-[#9b7e74] text-white hover:bg-[#7a5c52] px-8 py-3 rounded-full text-lg font-semibold transition-colors duration-300"
               >
                 Kontaktirajte nas
               </a>
               <a
                 href="tel:+38166224502"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3 rounded-full text-lg font-semibold transition-colors duration-300"
+                className="border-2 border-[#9b7e74] text-[#7a5c52] hover:bg-[#9b7e74] hover:text-white px-8 py-3 rounded-full text-lg font-semibold transition-colors duration-300"
               >
                 Pozovite nas
               </a>
@@ -169,47 +167,6 @@ export default function CollaboratorsClient({
               informacije, kontaktirajte nas direktno.
             </p>
           </motion.div>
-          {/* <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-lg text-center"
-          >
-            <h3 className="text-2xl font-bold mb-4 text-white">
-              Želite da postanete naš saradnik?
-            </h3>
-            <p className="text-lg mb-6 opacity-90">
-              Kontaktirajte nas za mogućnosti saradnje i partnerstva
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/kontakt"
-                className="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-semibold transition-colors duration-300"
-              >
-                Kontaktirajte nas
-              </a>
-              <a
-                href="tel:+38166224502"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3 rounded-full text-lg font-semibold transition-colors duration-300"
-              >
-                Pozovite nas
-              </a>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-            className="mt-12 text-center"
-          >
-            <p className="text-gray-600 italic">
-              * Lista saradnika se redovno ažurira. Za najtačnije
-              informacije, kontaktirajte nas direktno.
-            </p>
-          </motion.div> */}
         </motion.div>
       </div>
     </section>
