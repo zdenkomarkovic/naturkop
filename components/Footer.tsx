@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Footer({ showBlog }: { showBlog: boolean }) {
   return (
     <motion.footer
-      className="bg-secondary text-white py-10 md:px-10"
+      className="bg-white text-gray-900 py-10 md:px-10 border-t border-gray-200"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5 }}
@@ -19,33 +19,33 @@ export default function Footer({ showBlog }: { showBlog: boolean }) {
             <nav className=" flex flex-wrap items-center justify-center gap-3 md:gap-6">
               <Link
                 href="/"
-                className="block  hover:text-gray-300 transition-colors"
+                className="block  hover:text-gray-500 transition-colors"
               >
                 Početna
               </Link>
               <Link
                 href="/#proizvodi"
-                className="block  hover:text-gray-300 transition-colors"
+                className="block  hover:text-gray-500 transition-colors"
               >
                 Proizvodi
               </Link>
               <Link
                 href="/#partneri"
-                className="block  hover:text-gray-300 transition-colors"
+                className="block  hover:text-gray-500 transition-colors"
               >
                 Partneri
               </Link>
               {showBlog && (
                 <Link
                   href="/blog"
-                  className="block  hover:text-gray-300 transition-colors"
+                  className="block  hover:text-gray-500 transition-colors"
                 >
                   Blog
                 </Link>
               )}
               <Link
                 href="/kontakt"
-                className="block  hover:text-gray-300 transition-colors"
+                className="block  hover:text-gray-500 transition-colors"
               >
                 Kontakt
               </Link>
@@ -72,7 +72,7 @@ export default function Footer({ showBlog }: { showBlog: boolean }) {
         </div>
 
         {/* Donji deo */}
-        <div className="border-t border-gray-700 pt-6">
+        <div className="border-t border-gray-200 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:px-20">
             <p className=" text-center md:text-left">
               &copy; {new Date().getFullYear()} Naturkop doo. Sva prava
@@ -84,7 +84,7 @@ export default function Footer({ showBlog }: { showBlog: boolean }) {
               className=" "
             >
               Izrada sajta:{" "}
-              <span className="font-bold text-primary hover:text-white transition-colors">
+              <span className="font-bold text-primary hover:text-gray-600 transition-colors">
                 ManikamWebSolutions
               </span>
             </a>
