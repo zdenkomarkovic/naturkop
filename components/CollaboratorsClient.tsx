@@ -131,7 +131,7 @@ export default function CollaboratorsClient({
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="bg-[#9b7e74]/20 border border-[#9b7e74] rounded-lg text-center p-8 shadow-sm"
+            className="bg-[#9b7e74]/20 border-4 border-[#9b7e74] rounded-lg text-center p-8 shadow-sm"
           >
             <h3 className="text-2xl font-bold mb-4 text-gray-900">
               Želite da postanete naš partner?
