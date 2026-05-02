@@ -1,10 +1,11 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "Naturkop - Mamina kuhinja",
+  "short_name": "Naturkop",
+  "description": "Domaći džemovi i voćni namazi bez veštačkih boja i aroma",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#ebe8e6",
+  "theme_color": "#9b7e74",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

@@ -10,18 +10,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Naturkop - Mamina kuhinja | Domaći džemovi i voćni namazi",
-  description:
-    "Naturkop - proizvodnja domaćih džemova i voćnih namaza pod brendom 'Mamina kuhinja'. Autentičan ukus domaće tradicije iz Mudrakovca. Private label programa.",
-  icons: {
-    icon: [
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon.ico", sizes: "any" },
-    ],
-    apple: "/apple-touch-icon.png",
+  title: {
+    default: "Naturkop - Mamina kuhinja | Domaći džemovi i voćni namazi",
+    template: "%s | Naturkop - Mamina kuhinja",
   },
-  manifest: "/site.webmanifest",
+  description:
+    "Naturkop doo iz Mudrakovca — proizvodnja domaćih džemova i voćnih namaza pod brendom 'Mamina kuhinja'. Bez veštačkih boja i aroma. Private label program za partnere.",
   keywords: [
     "džem",
     "domaći džem",
@@ -35,11 +29,62 @@ export const metadata: Metadata = {
     "džem od šljive",
     "džem od višnje",
     "džem od jagode",
+    "džem od kajsije",
+    "džem od šipka",
     "tradicionalni proizvodi",
+    "domaća radinost",
+    "voćne prerađevine",
   ],
+  authors: [{ name: "Naturkop doo" }],
+  creator: "Naturkop doo",
+  publisher: "Naturkop doo",
+  metadataBase: new URL("https://www.naturkop.rs"),
   alternates: {
     canonical: "https://www.naturkop.rs/",
   },
+  openGraph: {
+    type: "website",
+    locale: "sr_RS",
+    url: "https://www.naturkop.rs/",
+    siteName: "Naturkop - Mamina kuhinja",
+    title: "Naturkop - Mamina kuhinja | Domaći džemovi i voćni namazi",
+    description:
+      "Domaći džemovi i voćni namazi bez veštačkih boja i aroma. Mamina kuhinja — ukus koji budi sećanja na detinjstvo.",
+    images: [
+      {
+        url: "/onama.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Naturkop - Mamina kuhinja domaći džemovi",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Naturkop - Mamina kuhinja | Domaći džemovi i voćni namazi",
+    description:
+      "Domaći džemovi i voćni namazi bez veštačkih boja i aroma. Mamina kuhinja — ukus koji budi sećanja na detinjstvo.",
+    images: ["/onama.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default async function RootLayout({

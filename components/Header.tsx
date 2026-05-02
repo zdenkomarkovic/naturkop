@@ -26,7 +26,7 @@ const MobileMenu = ({ showBlog }: { showBlog: boolean }) => {
   return (
     <Sheet>
       <SheetTrigger className="lg:hidden">
-        <MenuIcon className="text-primary cursor-pointer" />
+        <MenuIcon className="text-[#9b7e74] cursor-pointer" />
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
@@ -96,7 +96,7 @@ export default function Header({ showBlog }: { showBlog: boolean }) {
     <header
       className={`flex justify-center bg-white fixed top-0 left-0 right-0 z-[10]`}
     >
-      <nav className="flex items-center justify-between px-4  max-w-[80rem] w-full text-primary font-bold">
+      <nav className="flex items-center justify-between px-4  max-w-[80rem] w-full text-[#9b7e74] font-bold">
         <Link href="/" className="">
           <Image
             src="/naturkopfooter.png"

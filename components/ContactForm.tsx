@@ -53,7 +53,7 @@ export default function ContactForm() {
     <div className="">
       <Form {...form}>
         <form
-          className="grid grid-cols-3 items-center p-4 lg:p-10 shadow-lg shadow-secondary rounded-xl bg-white"
+          className="grid grid-cols-3 items-center p-4 lg:p-10 shadow-lg shadow-[#9b7e74] rounded-xl bg-white"
           onSubmit={form.handleSubmit(onSubmit)}
         >
           <div className="col-span-3 flex flex-col gap-4  md:gap-4">
@@ -119,7 +119,7 @@ export default function ContactForm() {
             />
             <Button
               disabled={isLoading}
-              className="bg-secondary  hover:bg-gray-600 transition-colors ease-in-out duration-500"
+              className="bg-[#9b7e74] hover:bg-[#8a6e65] transition-colors ease-in-out duration-500"
             >
               {isLoading ? "Sending....." : "Send"}
             </Button>

@@ -15,7 +15,7 @@ export default function Footer({ showBlog }: { showBlog: boolean }) {
         <div className="grid md:grid-cols-2 gap-6 md:gap-6 mb-6">
           {/* Navigacija */}
           <div className="w-fit mx-auto">
-            <h3 className="text-xl font-semibold mb-6">Navigacija</h3>
+            <h3 className="text-xl font-semibold mb-6 text-[#9b7e74]">Navigacija</h3>
             <nav className=" flex flex-wrap items-center justify-center gap-3 md:gap-6">
               <Link
                 href="/"
@@ -84,7 +84,7 @@ export default function Footer({ showBlog }: { showBlog: boolean }) {
               className=" "
             >
               Izrada sajta:{" "}
-              <span className="font-bold text-primary hover:text-gray-600 transition-colors">
+              <span className="font-bold text-[#9b7e74] hover:text-gray-600 transition-colors">
                 ManikamWebSolutions
               </span>
             </a>
